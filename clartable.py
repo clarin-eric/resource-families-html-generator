@@ -1,4 +1,11 @@
 class Tag:
+    '''
+    Class for tags in the tag tree. Note, that tags enclosed by <tbody> in order to allow multiple rows generation without repeating headers are created using RowTag, not this class. 
+    
+    Args:
+        tag_dict: JSON dict
+    '''
+
     def __init__(self, tag_dict):
         keys = tag_dict.keys()
         
@@ -13,6 +20,7 @@ class Tag:
             self.end_tag = ''
        
         if 'tags' in keys:
+            # in order to allow repeatition of row generation, all tags within <tbody> ... </tbody> are instances of RowTag, not Tag 
             if self.tag == '<tbody>':
                 self.tags = [RowTag(tag) for tag in tag_dict['tags']]
             else:
@@ -31,9 +39,19 @@ class Tag:
             self.on_next = ''
     
     def generate(self, stack, data_frame):
+        '''
+        Args:
+            stack: [], a stack of strings in form of </tag> for tag enclosing
+            data_frame: pandas.DataFrame to be passed in depth to the tree till it hits <tbody> tag
+
+        Returns:
+            string, generated html of a tag with its children
+        '''
         intend = len(stack) * '\t'
+        # <tbody> tag marks beginning of row tags 
         if self.tag == '<tbody>':
             ret = ''
+            # create table row for every data row in csv file
             for _, data_row in data_frame.iterrows():
                 ret += intend + self.tag + self.text + '\n'
                 stack.append(self.end_tag)
@@ -53,6 +71,13 @@ class Tag:
 
 
 class RowTag:
+    '''
+    Class for tags in tag tree enclosed by <tbody>
+
+    Args:
+        tag_dict: JSON dict
+    '''
+
     def __init__(self, tag_dict):
         keys = tag_dict.keys()
         self.tag = tag_dict['tag']
@@ -106,6 +131,12 @@ class RowTag:
 
 
 class Clartable(Tag):
+    '''
+    Seed of a tag tree
+    
+    Args:
+        tag: JSON dict with table rules
+    '''
     def __init__(self, tag):
         super().__init__(tag)
         self.tag_stack = []
@@ -117,6 +148,9 @@ class Clartable(Tag):
         return ret
 
 class Field:
+    '''
+    Fields are parts of the table which require data from .csv file. Do not have a tag member, but stores its rules as a explicit text, e.g. "<strong>Size: </strong>%s"
+    '''
     def __init__(self, field_dict):
         self.optional = field_dict['optional']
         self.text = field_dict['text']
@@ -130,8 +164,6 @@ class Field:
                     return ''
         #if len(fields_data) > 1:
             #fields_data = tuple(fields_datas)
-        print(self.text)
-        print(fields_data)
         if len(fields_data) > 1:
             fields_data = tuple(fields_data)
         else:
