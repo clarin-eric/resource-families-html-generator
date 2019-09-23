@@ -57,6 +57,24 @@ Generated html table with names of corpora, assuming there were only 2 rows in a
 </table>
 ```
 
+<table>
+	<thead>
+                <th valign="top">Corpus name
+                </th>
+        </thead>
+        <tbody>
+                <p>Some text here
+                        <strong>Field data</strong> will be inserted here: NKJP 2.1.4
+                </p>
+        </tbody>
+        <tbody>
+                <p>Some text here
+                        <strong>Field data</strong> will be inserted here: Common Crawl
+                </p>
+        </tbody>
+</table>
+
+
 \<tbody\> tag encloses tags and fields for row creation, only tags nested within \<tbody\> ... \</tbody\> can contain "fields": []
 
 	
