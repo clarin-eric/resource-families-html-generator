@@ -23,9 +23,14 @@ Rules are composed of nested json notation of tags and field.
 Given rule:
 ```
 {"tags": [
-	{"tag": "<tbody>", "tags": [
-		{"tag": "<p>", "text": "Some text here", "fields": [
-			{"text": "<strong>Field data</strong> will be inserted here: %s", "columns": ['column_name_in_csv_file']}
+	{"tag": "<table>", "tags": [
+		{"tag": "<thead>", "tags": [
+			{"tag": "<th>", "text": "Some header"}	
+		]},
+		{"tag": "<tbody>", "tags": [
+			{"tag": "<p>", "text": "Some text here", "fields": [
+				{"text": "<strong>Field data</strong> will be inserted here: %s", "columns": ['column_name_in_csv_file']}
+			]}
 		]}
 	]}
 ]}
@@ -33,11 +38,29 @@ Given rule:
 
 Generated html code will be:
 ```
-<tbody>
-	<p>Some text here
-		<strong>Field data</strong> will be inserted here: data_from_csv_here
-	</p>
-</tbody>
+<table>
+	<thead>
+		<th>Some header
+		</th>
+	</thead>
+	<tbody>
+		<p>Some text here
+			<strong>Field data</strong> will be inserted here: data_from_FIRST_row_in_csv_here
+		</p>
+	</tbody>
+        <tbody>
+                <p>Some text here
+                        <strong>Field data</strong> will be inserted here: data_from_SECOND_row_in_csv_here
+                </p>
+        </tbody>
+	[...]
+        <tbody>
+                <p>Some text here
+                        <strong>Field data</strong> will be inserted here: data_from_LAST_row_in_csv_here
+                </p>
+        </tbody>
+</table>
+
 ```
 
 \<tbody\> tag encloses tags and fields for row creation, only tags nested within \<tbody\> ... \</tbody\> can contain "fields": []
