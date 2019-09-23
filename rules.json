@@ -2,32 +2,36 @@
 	{"tag": "<h3 id=\"table-title\">", "text": "table_title"},
 	{"tag": "<table class =\"table\" cellspacing=\"5\">", "tags":[
 		{"tag": "<thead>", "tags": [
-			{"tag": "<th valign=\"top\">", "text": "Corpus"},
-			{"tag": "<th valign=\"top\">", "text": "Language"}, 
-			{"tag": "<th valign=\"top\">", "text": "Description"}, 
-			{"tag": "<th valign=\"top\">", "text": "Availability"}
+			{"tag": "<tr>", "tags": [
+				{"tag": "<th valign=\"top\">", "text": "Corpus"},
+				{"tag": "<th valign=\"top\">", "text": "Language"}, 
+				{"tag": "<th valign=\"top\">", "text": "Description"}, 
+				{"tag": "<th valign=\"top\">", "text": "Availability"}
+			]}
 		]},
 		{"tag": "<tbody>", "tags": [
-			{"tag": "<td valign=\"top\">", "tags":[
-				{"tag": "<p>", "fields": [
-					{"text": "<a href=''>%s</a>", "optional": false, "columns": ["Corpus"]}]}, 
-				{"tag": "<p>", "on_next": "<br>", "fields": [
-					{"text": "<strong>Size: </strong>%s", "optional": true, "columns": ["Size"]},
-					{"text": "<strong>Annotation: </strong>%s", "optional": true, "columns": ["Annotation"]},
-					{"text": "<strong>Licence: </strong>%s", "optional": true, "columns": ["Licence"]}
-				]}
-			]},
-			{"tag": "<td valign=\"top\">", "fields":[
-				{"text": "%s", "optional": false, "columns": ["Language"]}
-			]},
-			{"tag": "<td valign=\"top\">", "tags":[
-				{"tag": "<p>", "fields": [
-					{"text": "%s", "optional": false, "columns": ["Description"]}
-				]}
-			]},
-			{"tag": "<td valign=\"top\">", "tags":[
-				{"tag": "<p>", "fields": [
-					{"text": "%s", "optional": true, "columns": ["Availability"]}
+			{"tag": "<tr>", "tags": [
+				{"tag": "<td valign=\"top\">", "tags":[
+					{"tag": "<p>", "fields": [
+						{"text": "<a href=''>%s</a>", "optional": false, "columns": ["Corpus"]}]}, 
+					{"tag": "<p>", "on_next": "<br>", "fields": [
+						{"text": "<strong>Size: </strong>%s", "optional": true, "columns": ["Size"]},
+						{"text": "<strong>Annotation: </strong>%s", "optional": true, "columns": ["Annotation"]},
+						{"text": "<strong>Licence: </strong>%s", "optional": true, "columns": ["Licence"]}
+					]}
+				]},
+				{"tag": "<td valign=\"top\">", "fields":[
+					{"text": "%s", "optional": false, "columns": ["Language"]}
+				]},
+				{"tag": "<td valign=\"top\">", "tags":[
+					{"tag": "<p>", "fields": [
+						{"text": "%s", "optional": false, "columns": ["Description"]}
+					]}
+				]},
+				{"tag": "<td valign=\"top\">", "tags":[
+					{"tag": "<p>", "fields": [
+						{"text": "%s", "optional": true, "columns": ["Availability"]}
+					]}
 				]}
 			]}
 		]}

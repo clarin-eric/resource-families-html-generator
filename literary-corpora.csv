@@ -1,6 +1,5 @@
 Corpus,Language,Size,Annotation,Licence,Description,Availability,Repository,Publication,Note
-"MULTEXT-East ""1984"" annotated corpus 4.0
-","Bulgarian, Czech, English, Estonian, Hungarian, Macedonian, Persian, Polish, Romanian, Serbian, Slovak, Slovenian","12 texts, 79718 sentences, 1064424 words
+"MULTEXT-East ""1984"" annotated corpus 4.0","Bulgarian, Czech, English, Estonian, Hungarian, Macedonian, Persian, Polish, Romanian, Serbian, Slovak, Slovenian","12 texts, 79718 sentences, 1064424 words
 ","sentence-alignment, MSD tagging",CC BY-NC SA 4.0,Parallel corpus of George Orwell's 1984 and its translations,Download,CLARIN.SI,https://doi.org/10.1007/s10579-011-9174-8,
 Electronic text corpus of Sumerian literature (ETCSL),Sumerian,400 literary compositions,,,A selection of nearly 400 literary compositions recorded on sources which come from ancient Mesopotamia and date to the late third and early second millennia BCE.,Online,LINDAT,,External interface
 "Collection of Latvian literature
