@@ -23,7 +23,7 @@ Rules are composed of nested json notation of tags and field.
 Given rule:
 ```
 {"tags": [
-	{"tag": "<table>", "tags": [
+	{"tag": "<table class=\"table\" cellspacing=\"2\">", "tags": [
 		{"tag": "<thead>", "tags": [
 			{"tag": "<tr>", "tags": [
 				{"tag": "<th>", "text": "Corpus name"}
@@ -31,8 +31,10 @@ Given rule:
 		]},
 		{"tag": "<tbody>", "tags": [
 			{"tag": "<tr>", "tags": [
-				{"tag": "<p>", "text": "Some text here", "fields": [
-					{"text": "<strong>Field data</strong> will be inserted here: %s", "columns": ['column_name_in_csv_file']}
+				{"tag": "<td valign=\"top\"", "tags": [
+					{"tag": "<p>", "text": "Some text here", "fields": [
+						{"text": "<strong>Field data</strong> will be inserted here: %s", "columns": ['column_name_in_csv_file']}
+					]}
 				]}
 			]}
 		]}
@@ -42,47 +44,61 @@ Given rule:
 
 Generated html table with names of corpora, assuming there were only 2 rows in a .csv file
 ```html
-
-<table>
+<table class ="table" cellspacing="2">
         <thead>
-		<tr>
-                	<th valign="top">Corpus name
-                	</th>
-		</tr>
+                <tr>
+                        <th valign="top">Corpus name
+                        </th>
+                </tr>
         </thead>
         <tbody>
-		<tr>
-                	<p>Some text here
-                        	<strong>Field data</strong> will be inserted here: NKJP 2.1.4
-                	</p>
-        	</tr>
-	</tbody>
+                <tr>
+                        <td valign="top">
+                                <p>Some text here
+                                <strong>Field data</strong> will be inserted here: NKJP 2.1.4
+                                </p>
+                        </td>
+                </tr>
+        </tbody>
         <tbody>
-		<tr>
-                	<p>Some text here
-                        	<strong>Field data</strong> will be inserted here: Common Crawl
-                	</p>
-        	</tr>
-	</tbody>
+                <tr>
+                        <td valign="top">
+                                <p>Some text here
+                                <strong>Field data</strong> will be inserted here: Common Crawl
+                                </p>
+                        </td>
+                </tr>
+        </tbody>
 </table>
-```
 
-<table>
-	<thead>
-                <th valign="top">Corpus name
-                </th>
+```
+<table class ="table" cellspacing="2">
+        <thead>
+                <tr>
+                        <th valign="top">Corpus name
+                        </th>
+                </tr>
         </thead>
         <tbody>
-                <p>Some text here
-                        <strong>Field data</strong> will be inserted here: NKJP 2.1.4
-                </p>
+                <tr>
+                        <td valign="top">
+                                <p>Some text here
+                                <strong>Field data</strong> will be inserted here: NKJP 2.1.4
+                                </p>
+                        </td>
+                </tr>
         </tbody>
         <tbody>
-                <p>Some text here
-                        <strong>Field data</strong> will be inserted here: Common Crawl
-                </p>
+                <tr>
+                        <td valign="top">
+                                <p>Some text here
+                                <strong>Field data</strong> will be inserted here: Common Crawl
+                                </p>
+                        </td>
+                </tr>
         </tbody>
 </table>
+
 
 
 \<tbody\> tag encloses tags and fields for row creation, only tags nested within \<tbody\> ... \</tbody\> can contain "fields": []
