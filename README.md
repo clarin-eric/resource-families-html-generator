@@ -25,7 +25,7 @@ Given rule:
 {"tags": [
 	{"tag": "<table>", "tags": [
 		{"tag": "<thead>", "tags": [
-			{"tag": "<th>", "text": "Some header"}	
+			{"tag": "<th>", "text": "Corpus name"}	
 		]},
 		{"tag": "<tbody>", "tags": [
 			{"tag": "<p>", "text": "Some text here", "fields": [
@@ -36,39 +36,12 @@ Given rule:
 ]}
 ```
 
-Generated html code will be:
-```
-<table>
-	<thead>
-		<th valign="top">Some header
-		</th>
-	</thead>
-	<tbody>
-		<p>Some text here
-			<strong>Field data</strong> will be inserted here: data_from_FIRST_row_in_csv_here
-		</p>
-	</tbody>
-        <tbody>
-                <p>Some text here
-                        <strong>Field data</strong> will be inserted here: data_from_SECOND_row_in_csv_here
-                </p>
-        </tbody>
-	[...]
-        <tbody>
-                <p>Some text here
-                        <strong>Field data</strong> will be inserted here: data_from_LAST_row_in_csv_here
-                </p>
-        </tbody>
-</table>
-
-```
-
-Generated table with names of corpora, assuming there were only 2 rows in csv file, 
+Generated html table with names of corpora, assuming there were only 2 rows in a .csv file
 ```html
 
 <table>
         <thead>
-                <th valign="top">Coprus name
+                <th valign="top">Corpus name
                 </th>
         </thead>
         <tbody>
