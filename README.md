@@ -25,11 +25,15 @@ Given rule:
 {"tags": [
 	{"tag": "<table>", "tags": [
 		{"tag": "<thead>", "tags": [
-			{"tag": "<th>", "text": "Corpus name"}	
+			{"tag": "<tr>", "tags": [
+				{"tag": "<th>", "text": "Corpus name"}
+			]}	
 		]},
 		{"tag": "<tbody>", "tags": [
-			{"tag": "<p>", "text": "Some text here", "fields": [
-				{"text": "<strong>Field data</strong> will be inserted here: %s", "columns": ['column_name_in_csv_file']}
+			{"tag": "<tr>", "tags": [
+				{"tag": "<p>", "text": "Some text here", "fields": [
+					{"text": "<strong>Field data</strong> will be inserted here: %s", "columns": ['column_name_in_csv_file']}
+				]}
 			]}
 		]}
 	]}
@@ -41,19 +45,25 @@ Generated html table with names of corpora, assuming there were only 2 rows in a
 
 <table>
         <thead>
-                <th valign="top">Corpus name
-                </th>
+		<tr>
+                	<th valign="top">Corpus name
+                	</th>
+		</tr>
         </thead>
         <tbody>
-                <p>Some text here
-                        <strong>Field data</strong> will be inserted here: NKJP 2.1.4
-                </p>
-        </tbody>
+		<tr>
+                	<p>Some text here
+                        	<strong>Field data</strong> will be inserted here: NKJP 2.1.4
+                	</p>
+        	</tr>
+	</tbody>
         <tbody>
-                <p>Some text here
-                        <strong>Field data</strong> will be inserted here: Common Crawl
-                </p>
-        </tbody>
+		<tr>
+                	<p>Some text here
+                        	<strong>Field data</strong> will be inserted here: Common Crawl
+                	</p>
+        	</tr>
+	</tbody>
 </table>
 ```
 
