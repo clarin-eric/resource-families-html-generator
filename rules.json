@@ -26,13 +26,11 @@
 				{"tag": "<td valign=\"top\">", "tags":[
 					{"tag": "<p>", "on_next": "<br>", "fields": [
 						{"text": "%s", "optional": false, "columns": ["Description"]},
-						{"text": "a href=\"%s\">%s</a>", "optional": true, "columns": ["Publication_URL", "Publication"]}
+						{"text": "<a href=\"%s\">%s</a>", "optional": true, "columns": ["Publication_URL", "Publication"]}
 					]}
 				]},
-				{"tag": "<td valign=\"top\">", "tags":[
-					{"tag": "<p>", "on_next": "<br>", "fields": [
-						{"text": "<a class=\"btn btn-primary pull-left\" href=\"%s\"", "optional": true, "sep": ["#SEP"], "columns": ["Buttons", "Buttons_URL"]}
-					]}
+				{"tag": "<td valign=\"top\">", "fields":[
+					{"text": "<p><a class=\"btn btn-primary pull-left\" href=\"%s\"<span class=\"glyphicon-download\">::before</span>%s</a></p>", "optional": true, "sep": "#SEP", "columns": ["Buttons_URL", "Buttons"]}
 				]}
 			]}
 		]}
