@@ -13,7 +13,7 @@
 			{"tag": "<tr>", "tags": [
 				{"tag": "<td valign=\"top\">", "tags":[
 					{"tag": "<p>", "fields": [
-						{"text": "<a href=''>%s</a>", "optional": false, "columns": ["Corpus"]}]}, 
+						{"text": "<a href=\"%s\">%s</a>", "optional": false, "columns": ["Corpus_URL", "Corpus"]}]}, 
 					{"tag": "<p>", "on_next": "<br>", "fields": [
 						{"text": "<strong>Size: </strong>%s", "optional": true, "columns": ["Size"]},
 						{"text": "<strong>Annotation: </strong>%s", "optional": true, "columns": ["Annotation"]},
@@ -24,13 +24,14 @@
 					{"text": "%s", "optional": false, "columns": ["Language"]}
 				]},
 				{"tag": "<td valign=\"top\">", "tags":[
-					{"tag": "<p>", "fields": [
-						{"text": "%s", "optional": false, "columns": ["Description"]}
+					{"tag": "<p>", "on_next": "<br>", "fields": [
+						{"text": "%s", "optional": false, "columns": ["Description"]},
+						{"text": "a href=\"%s\">%s</a>", "optional": true, "columns": ["Publication_URL", "Publication"]}
 					]}
 				]},
 				{"tag": "<td valign=\"top\">", "tags":[
-					{"tag": "<p>", "fields": [
-						{"text": "%s", "optional": true, "columns": ["Availability"]}
+					{"tag": "<p>", "on_next": "<br>", "fields": [
+						{"text": "<a class=\"btn btn-primary pull-left\" href=\"%s\"", "optional": true, "sep": ["#SEP"], "columns": ["Buttons", "Buttons_URL"]}
 					]}
 				]}
 			]}
