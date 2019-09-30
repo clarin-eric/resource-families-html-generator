@@ -155,8 +155,8 @@ class Field:
         self.optional = field_dict['optional']
         self.text = field_dict['text']
         self.columns = field_dict['columns']
-        if field_dict.['sep']:
-            self.sep = field_dict.['sep']
+        if 'sep' in field_dict.keys():
+            self.sep = field_dict['sep']
         else:
             self.sep = None
 
@@ -167,18 +167,21 @@ class Field:
                 if field_data == '':
                     return ''
         if self.sep:
-            split_lists = [[] for i in range(len(self.columns))
-            for i, field_data in enumerate(self.columns):
-                split_lists[i].extend(column.split(self.sep))
+            split_lists = [[] for i in range(len(self.columns))]
+            for i, field_data in enumerate(fields_data):
+                field_data_split = field_data.split(self.sep)
+                if isinstance(field_data_split, list):
+                    split_lists[i].extend(field_data_split)
+                else:
+                    split_lists[i].append(field_data_split)
 
-            data = tuple(zip(list1, list2))
+            data = list(zip(*split_lists))
             ret = ''
             for fields_data in data:
                 ret += self.text % fields_data 
                 ret += '\n'
+            return ret
 
-        #if len(fields_data) > 1:
-            #fields_data = tuple(fields_datas)
         elif len(fields_data) > 1:
             fields_data = tuple(fields_data)
         else:
