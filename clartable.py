@@ -155,6 +155,10 @@ class Field:
         self.optional = field_dict['optional']
         self.text = field_dict['text']
         self.columns = field_dict['columns']
+        if field_dict.['sep']:
+            self.sep = field_dict.['sep']
+        else:
+            self.sep = None
 
     def generate(self, data_row):
         fields_data = [data_row[column] for column in self.columns]
@@ -162,9 +166,20 @@ class Field:
             for field_data in fields_data:
                 if field_data == '':
                     return ''
+        if self.sep:
+            split_lists = [[] for i in range(len(self.columns))
+            for i, field_data in enumerate(self.columns):
+                split_lists[i].extend(column.split(self.sep))
+
+            data = tuple(zip(list1, list2))
+            ret = ''
+            for fields_data in data:
+                ret += self.text % fields_data 
+                ret += '\n'
+
         #if len(fields_data) > 1:
             #fields_data = tuple(fields_datas)
-        if len(fields_data) > 1:
+        elif len(fields_data) > 1:
             fields_data = tuple(fields_data)
         else:
             fields_data = fields_data[0]
