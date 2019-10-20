@@ -13,6 +13,7 @@ args = parser.parse_args()
 
 if __name__ == "__main__":
         csv_name = os.path.basename(args.i)
+        csv_name = csv_name.replace('.csv', '')
         data = read_data(args.i)
         rules = read_rules(args.r)
         clartable = Clartable(rules)
