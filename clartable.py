@@ -158,7 +158,7 @@ class Field:
         if 'sep' in field_dict.keys():
             self.sep = field_dict['sep']
         else:
-            self.sep = None
+            self.sep = None 
 
     def generate(self, data_row):
         fields_data = [data_row[column] for column in self.columns]
@@ -178,7 +178,13 @@ class Field:
             data = list(zip(*split_lists))
             ret = ''
             for fields_data in data:
-                ret += self.text % fields_data 
+                tmp = fields_data
+                if 'Buttons' in self.columns:
+                    if 'Download' in fields_data:
+                        tmp = fields_data[:1] + ('glyphicon glyphicon-download',) + fields_data[1:]
+                    else:
+                        tmp = fields_data[:1] + ('glyphicon glyphicon-search',) + fields_data[1:]
+                ret += self.text % tmp 
                 ret += '\n'
             return ret
 
