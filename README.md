@@ -36,7 +36,7 @@ In order to create html table from .csv file with default rules, the file requir
 
 Corpus | Corpus_URL | Language | Size | Annotation | Licence | Description | Buttons | Buttons_URL | Publication | Publication_URL | Note
 -------|------------|----------|------|------------|---------|-------------|---------|-------------|-------------|-----------------|-------
-Example Corpus Name | www.examplaryurl.com | English | 100 million tokens | tokenised, PoS-tagged, lemmatised | CC-BY | First examplary sentence#SEPSecond examplary sentence to be started from new line with intend#SEPExample with \<a href="http://some.url">hyperlink</a> in it | Concordancer#SEPDownload | https://www.concordancer.com/#SEPhttps://www.download.com | Smith et al. (3019) | https://publication.url | Note text to be displayed in button field
+Example Corpus Name | www.examplaryurl.com | English | 100 million tokens | tokenised, PoS-tagged, lemmatised | CC-BY | First examplary sentence#SEPSecond examplary sentence to be started from new line with intend#SEPExample with \<a href="http://some.url">hyperlink\</a> in it | Concordancer#SEPDownload | https://www.concordancer.com/#SEPhttps://www.download.com | Smith et al. (3019) | https://publication.url | Note text to be displayed in button field
 
 Resulting table:
 ![Examplary table](docs/media/example.png)
