@@ -56,7 +56,7 @@ Given rule:
 		{"tag": "<tbody>", "tags": [
 			{"tag": "<tr>", "tags": [
 				{"tag": "<td valign=\"top\"", "tags": [
-					{"tag": "<p>", "text": "Some text here", "fields": [
+					{"tag": "<p>", "fields": [
 						{"text": "<strong>Field data</strong> will be inserted here: %s", "columns": ['column_name_in_csv_file']}
 					]}
 				]}
@@ -78,7 +78,7 @@ Generated html table with names of corpora, assuming there were only 2 rows in a
         <tbody>
                 <tr>
                         <td valign="top">
-                                <p>Some text here
+                                <p>
                                 <strong>Field data</strong> will be inserted here: NKJP 2.1.4
                                 </p>
                         </td>
@@ -87,7 +87,7 @@ Generated html table with names of corpora, assuming there were only 2 rows in a
         <tbody>
                 <tr>
                         <td valign="top">
-                                <p>Some text here
+                                <p>
                                 <strong>Field data</strong> will be inserted here: Common Crawl
                                 </p>
                         </td>
