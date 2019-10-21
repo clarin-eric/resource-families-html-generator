@@ -4,11 +4,19 @@ from reader import read_data, read_rules
 import os
 
 parser = argparse.ArgumentParser(description='Create html table from given data and rules')
-parser.add_argument('-i', metavar='PATH', required=True, help='path to corpora folder with csv file')
+parser.add_argument('-i', metavar='PATH', required=True, help='path to a .csv file or folder with .csv files')
 parser.add_argument('-r', metavar='PATH', required=True, help='path to json file with rules')
 parser.add_argument('-o', metavar='PATH', required=True, help='path to file where output html table will be written')
 
 args = parser.parse_args()
+
+
+def table_title(file_path):
+    '''
+    generates h3 tag with file name as table title
+    '''
+
+    return "<h3 id\"table-title\">" + os.path.basename(file_path).replace('.csv', '') + "</h3>\n"
 
 
 if __name__ == "__main__":
@@ -19,7 +27,7 @@ if __name__ == "__main__":
     # input is a single file
     if os.path.isfile(args.i):
         data = open(args.i, 'r')
-        title = <h3 id=\"table-title\">" + os.path.basename(args.i).replace('.csv', '') + "</h3>\n"
+        title = table_title(args.i)
         table = title + clartable.generate(data)
         output.write(table)
     # input is a folder
@@ -34,7 +42,7 @@ if __name__ == "__main__":
                     data = read_data(os.path.join(root, _file))
                     # generate table:
                     if _file != '':
-                        table = "<h3 id=\"table-title\">" + _file.replace('.csv', '') + "</h3>\n"
+                        table = table_title(args.i)
                     else:
                         table = ''
                     table += clartable.generate(data)
