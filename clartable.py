@@ -149,7 +149,7 @@ class Clartable(Tag):
 
 class Field:
     '''
-    Fields are parts of the table which require data from .csv file. Do not have a tag member, but stores its rules as a explicit text, e.g. "<strong>Size: </strong>%s"
+    Fields are parts of the table which require data from .csv file, but stores text, e.g. "<strong>Size: </strong>%s"
     '''
     def __init__(self, field_dict):
         self.optional = field_dict['optional']
@@ -179,6 +179,7 @@ class Field:
             ret = ''
             for fields_data in data:
                 tmp = fields_data
+                #TODO find a way to remove hardcoded button icons
                 if 'Buttons' in self.columns:
                     if 'Download' in fields_data:
                         tmp = fields_data[:1] + ('glyphicon glyphicon-download',) + fields_data[1:]
