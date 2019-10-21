@@ -20,13 +20,13 @@ About
 
 ### Usage
 ```bash
-usage: run.py [-h] [-i PATH] [-r PATH] [-o PATH]
+usage: run.py [-h] -i PATH -r PATH -o PATH
 
 Create html table from given data and rules
 
 optional arguments:
   -h, --help  show this help message and exit
-  -i PATH     path to input csv file
+  -i PATH     path to a .csv file or folder with .csv files
   -r PATH     path to json file with rules
   -o PATH     path to file where output html table will be written
 ```
