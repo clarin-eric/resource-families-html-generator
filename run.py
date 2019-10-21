@@ -4,7 +4,7 @@ from reader import read_data, read_rules
 import os
 
 parser = argparse.ArgumentParser(description='Create html table from given data and rules')
-parser.add_argument('-i', metavar='PATH', required=True, help='path to input csv file')
+parser.add_argument('-i', metavar='PATH', required=True, help='path to corpora folder with csv file')
 parser.add_argument('-r', metavar='PATH', required=True, help='path to json file with rules')
 parser.add_argument('-o', metavar='PATH', required=True, help='path to file where output html table will be written')
 
@@ -12,14 +12,17 @@ args = parser.parse_args()
 
 
 if __name__ == "__main__":
-        csv_name = os.path.basename(args.i)
-        csv_name = csv_name.replace('.csv', '')
-        data = read_data(args.i)
-        rules = read_rules(args.r)
-        clartable = Clartable(rules)
-        # generate table
-        ret = clartable.generate(data)
-        output = open(args.o, 'w')
-        # add title
-        ret = "<h3 id=\"table-title\">" + csv_name + "</h3>\n" + ret
-        output.write(ret)
+    rules = read_rules(args.r)
+    clartable = Clartable(rules)
+    output = open(args.o, 'w')
+    for root, subdir, files in os.walk(args.i):
+        subdir.sort()
+        if len(files) > 0:
+            title = '<h2 id="' + '-'.join(os.path.basename(root).split(' ')) + '">' + os.path.basename(root) + '</h2>\n'
+            output.write(title)
+            for _file in files:
+                data = read_data(os.path.join(root, _file))
+                # generate table:
+                table = "<h3 id=\"table-title\">" + _file.replace('.csv', '') + "</h3>\n"
+                table += clartable.generate(data)
+                output.write(table)
