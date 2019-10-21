@@ -18,11 +18,15 @@ if __name__ == "__main__":
     for root, subdir, files in os.walk(args.i):
         subdir.sort()
         if len(files) > 0:
-            title = '<h2 id="' + '-'.join(os.path.basename(root).split(' ')) + '">' + os.path.basename(root) + '</h2>\n'
-            output.write(title)
+            if os.path.basename(root) != '':
+                title = '<h2 id="' + '-'.join(os.path.basename(root).split(' ')) + '">' + os.path.basename(root) + '</h2>\n'
+                output.write(title)
             for _file in files:
                 data = read_data(os.path.join(root, _file))
                 # generate table:
-                table = "<h3 id=\"table-title\">" + _file.replace('.csv', '') + "</h3>\n"
+                if _file != '':
+                    table = "<h3 id=\"table-title\">" + _file.replace('.csv', '') + "</h3>\n"
+                else:
+                    table = ''
                 table += clartable.generate(data)
                 output.write(table)

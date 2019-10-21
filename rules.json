@@ -15,7 +15,7 @@
 						{"text": "<a href=\"%s\">%s</a>", "optional": false, "columns": ["Corpus_URL", "Corpus"]}]}, 
 					{"tag": "<p>", "on_next": "<br>", "fields": [
 						{"text": "<strong>Size: </strong>%s", "optional": true, "columns": ["Size"]},
-						{"text": "<strong>Annotation: </strong>%s", "optional": true, "columns": ["Annotation"]},
+						{"text": "<strong>Annotation: </strong>%s", "optional": true, "columns": ["Linguistic information"]},
 						{"text": "<strong>Licence: </strong>%s", "optional": true, "columns": ["Licence"]}
 					]}
 				]},
