@@ -1,11 +1,24 @@
 ClarTable
 =========
+
+Installation
+------------
+Works with Python 3.5, 3.6, 3.7
+Depending on your default python version:
+```bash
+pip install -r requirements.txt
+```
+or
+```bash
+pip3 install -r requirements.txt
+```
+
 About
 -----
 *ClarTable* is a python script for generating html table containing data about corpora from .csv file.
 
 
-## Usage
+### Usage
 ```bash
 usage: run.py [-h] [-i PATH] [-r PATH] [-o PATH]
 
@@ -18,10 +31,21 @@ optional arguments:
   -o PATH     path to file where output html table will be written
 ```
 
-## Rules format
+### CSV format
+In order to create html table from .csv file with default rules, the file requires following columns (order not important):
+
+Corpus | Corpus_URL | Language | Size | Annotation | Licence | Description | Buttons | Buttons_URL | Publication | Publication_URL | Note
+-------|------------|----------|------|------------|---------|-------------|---------|-------------|-------------|-----------------|-------
+Example Corpus Name | www.examplaryurl.com | English | 100 million tokens | tokenised, PoS-tagged, lemmatised | CC-BY | First examplary sentence#SEPSecond examplary sentence to be started from new line with intend#SEPExample with \<a href="http://some.url"\>hyperlink\</a\> in it | Concordancer#SEPDownload | https://www.concordancer.com/#SEPhttps://www.download.com | Smith et al. (3019) | https://publication.url | Note text to be displayed in button field
+
+Resulting table:
+![Examplary table](docs/media/example.png)
+
+
+### Rules format
 Rules are composed of nested json notation of tags and field. 
 Given rule:
-```
+```javascript
 {"tags": [
 	{"tag": "<table class=\"table\" cellspacing=\"2\">", "tags": [
 		{"tag": "<thead>", "tags": [
