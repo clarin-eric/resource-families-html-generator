@@ -28,6 +28,7 @@ if __name__ == "__main__":
     else:
         for root, subdir, files in os.walk(args.i):
             subdir.sort()
+            files.sort()
             if len(files) > 0:
                 if os.path.basename(root) != '':
                     output.write(section_title(root))
