@@ -1,0 +1,8 @@
+language: python
+script:
+        - bash ./deploy-to-gh-pages.sh
+env:
+        global:
+                - GITHUB_REPO: "clarin-eric/resource-families-html-generator.git"
+                - secure: "t2nizS1n20/MrVIB50YbsUUsWF2Ek5rvc9jZWAxYuKF6l/Pd1vwMGZ5n+gSEfflWcDbuHxQnjE6c0FiyFQvcGSuMeypyDXoc6zEePQdIVJec2VpETZpLnEeS619LfcBjY8HFz5ZpMQqXJ5X8rVvws1XQAnZA+VRNAw3aqJKLHSZAHnbcYscndKZR4qvpeiFtakN2BofMutI3a/f8H9tgV4qgvGjz9Awz23r4w0WEPr6qIxjtNFIajsyWut+GIUhARaSXQVP8rn0wNA39nzmHGlT7UhLzoKwutSKQgDTQ7NqSJpMziLadGrudnCpAwAI3F2g2IkzRd1av4MiJyRV5XPy4aqwoqwmC7lRg+aEDB2QMFebgBDkODrCxcteYr4pvwYGKEQkIRF/sPPWXDd2z0w4Afz7esuXD8/rCH7Ell6ayFeVGqXJIk/b2yYcJjQbG27JuXe8z1UrbGNto6Y34sl+beRCfAzKAMopNG6Dto9bGDm1l9eV4h6gcoiE6k1H0YTv8kC1OI10wZFxGjLPBHWVDK0PkE4SeCX+uAWxMmv8aTh6DaCp3GTcK7tWBCbhcHHof9rDwfprgQ/qi/6DZ1jp+zGabcHhbeyjdshE422mJpKUifB3kRNdOrCu5ctf6ihmEE7M3Ua/rqSzZQHBkXL28i+nonXWegq7+cRZmc08="
+

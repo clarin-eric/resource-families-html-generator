@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import argparse
 import os
 
@@ -16,7 +18,7 @@ args = parser.parse_args()
 if __name__ == "__main__":
     rules = read_rules(args.r)
     clartable = Clartable(rules)
-    output = open(args.o, 'w')
+    output = open(os.path.join('./tables/', os.path.basename(os.path.normpath(args.o)) + '.html'), 'w')
 
     # input is a single file
     if os.path.isfile(args.i):
