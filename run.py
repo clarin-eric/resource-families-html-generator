@@ -18,6 +18,8 @@ args = parser.parse_args()
 if __name__ == "__main__":
     rules = read_rules(args.r)
     clartable = Clartable(rules)
+    if not os.path.exists('./tables/'):
+        os.makedirs('./tables/')
     output = open(os.path.join('./tables/', os.path.basename(os.path.normpath(args.o)) + '.html'), 'w')
 
     # input is a single file
