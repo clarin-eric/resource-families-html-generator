@@ -1,9 +1,8 @@
 language: python
 script:
-        - ./generate-tables.sh
-        - ./deploy-to-gh-pages.sh
+- "./generate-tables.sh"
+- "./deploy-to-gh-pages.sh"
 env:
-        global:
-                - GITHUB_REPO: "clarin-eric/resource-families-html-generator.git"
-                - secure: "t2nizS1n20/MrVIB50YbsUUsWF2Ek5rvc9jZWAxYuKF6l/Pd1vwMGZ5n+gSEfflWcDbuHxQnjE6c0FiyFQvcGSuMeypyDXoc6zEePQdIVJec2VpETZpLnEeS619LfcBjY8HFz5ZpMQqXJ5X8rVvws1XQAnZA+VRNAw3aqJKLHSZAHnbcYscndKZR4qvpeiFtakN2BofMutI3a/f8H9tgV4qgvGjz9Awz23r4w0WEPr6qIxjtNFIajsyWut+GIUhARaSXQVP8rn0wNA39nzmHGlT7UhLzoKwutSKQgDTQ7NqSJpMziLadGrudnCpAwAI3F2g2IkzRd1av4MiJyRV5XPy4aqwoqwmC7lRg+aEDB2QMFebgBDkODrCxcteYr4pvwYGKEQkIRF/sPPWXDd2z0w4Afz7esuXD8/rCH7Ell6ayFeVGqXJIk/b2yYcJjQbG27JuXe8z1UrbGNto6Y34sl+beRCfAzKAMopNG6Dto9bGDm1l9eV4h6gcoiE6k1H0YTv8kC1OI10wZFxGjLPBHWVDK0PkE4SeCX+uAWxMmv8aTh6DaCp3GTcK7tWBCbhcHHof9rDwfprgQ/qi/6DZ1jp+zGabcHhbeyjdshE422mJpKUifB3kRNdOrCu5ctf6ihmEE7M3Ua/rqSzZQHBkXL28i+nonXWegq7+cRZmc08="
-
+  global:
+  - GITHUB_REPO: clarin-eric/resource-families-html-generator.git
+  - secure: k47y1c4Ec02m7dcDVtWjOyIWmp1k67+PBf2XVyqF/ZbU+RYP23erb1dYTFsdhSJ3vtkllxQ9M6c7Si+eNELo+VGhpGI/ErejrAOsJlTFfhzst22XEVZjxX5q6CkTfI0qjjm3FZanQFoODJ4P1L6QXV9ahJQ917AKgT61QtEhPuDLjlWj0/SWbCDcBjB75JxkS3dZyei1yeAuOhZN/QGJVXQ85+L36qJAXgCdpKv60h+oW/hnvt9jpu+lbNpnVatXLW9UcYVOxXkNx+n3Dxk381cHRMdvp61AK7vxDfeRfALZwF1phKZg1z4r4Srrvi2DaP5M4sGCOyBdNNEACeLqVuaH+09AjKt4SOlLTGtI/7KeDZs22lL5mSn5CS5C3i5k5Edi0kJBAG9145pw+3sG8t8JCMEgC20gpG7D0+khBJI2fYtTAi3zS+uwQ6uPFPtzX3n3/sArOHyhPuDXOJ0IZeTIya+WDN+SsG1ruS2ikTcHSu9JlB7asQEKkHnqJFxQ+/gW+LGefNXIegNQokqT2hlAS3FD0F2pl+509tGszYnR0HTpsgCJpe0Wg6WnmsZNJCnCoNHQ+51KR5AQE9Jd+C8/TbuLqbimotdFb//AObrEYZvXrmKg6/SoUlmYTEjlDS9r2JXqRuuQgrqZLO+B7i1hOJERcq2Rn7zOYD04bUto=
