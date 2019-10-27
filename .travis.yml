@@ -7,8 +7,10 @@ env:
     - GITHUB_REPO: clarin-eric/resource-families-html-generator
     - secure: USWz4cJSYk2F6xFY8TZGFwgYsQVmMiV2su1zqVU4Fmis6SjWIUdiJ2gS6PI3EVV27FHNk9bSE+Z29WNKW333+0Od6P1lqitNJlZlTzpuQDa0Rp6V6MnZPQ/ZxS8dqBzYQzqJMYz9bLdtQrv3yQa4O47iMyR5HYVLUACYXbfV2i24spr9RiDXZ6qiDYfHUaHKess/mMeXyWDZK45RsFtN3j7m1ONtYYyTNNumscRP8O/6EJKmgVD8hHdv+1Nsg0iYK74wNYkoSlSxPGU7lZj3sFIiKyQGmXXu4GybWChLPWKyq6i3Tjx6Jj0OARSwrHmCjr6gTJXwPYrUMCoNgfalfB9feL3360KrNwVyEKf1CGpWzGhCxnFPUF8JjGTxMAjtJSFHwn0uY+v/TD8li5hQB0iuyt9U+oQLv/k7b+9igrbd62f8dw/TBHr09/Clo8s0OIKxEDsbq/0GXH58mZnvETjmCcRDxiv28d3efIMF5HI+7cBoUmHGMROdKFQd/atq2vWb44Ja+i3CLE0Y+qPGEoUBrF5o1dNwEZNmGU/ugA2ABht35hPCbGelaGvzVl7fpVI6xV//pkO8Vf8prwVRCd2PFM1Z2J6zuUYGbBV/l04eEL9cRNjryNWO2LwwIQFcRs+BRavqj2QUF075r7taoD0LIr1OJ+ttUUrfDxUHmSo=
 deploy:
-  - github_token: $GITHUB_TOKEN
-  - repo: $GITHUB_REPO
-  - local_dir: ./
+  provider: pages
+  skip_cleanup: true
+  api_key: $GITHUB_TOKEN
+  repo: $GITHUB_REPO
+  file: ./tables
   on: 
-    branch: travis
+  branch: travis
