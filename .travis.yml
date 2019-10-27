@@ -2,6 +2,7 @@ language: python
 script:
 - "./generate-tables.sh"
 - "./deploy-to-gh-pages.sh"
+- "./test.sh"
 env:
   global:
     - GITHUB_REPO: clarin-eric/resource-families-html-generator.git
