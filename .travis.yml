@@ -4,7 +4,6 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  repo: clarin-eric/resource-families-html-generator
   email: deploy@travis-ci.org
   name: Deployment Bot
   verbose: true
