@@ -10,6 +10,4 @@ deploy:
   github_token: $GITHUB_TOKEN 
   on:
     branches: 
-      except:
-      - master
       - travis
