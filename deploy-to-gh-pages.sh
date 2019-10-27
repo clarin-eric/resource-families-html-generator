@@ -9,7 +9,7 @@ git config --global user.name "Travis CI"
 # deploy to tables branch
 git add .
 git commit -m "Generate tables"
-echo "https://github-ci-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git" 
+echo https://github-ci-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git
 #> /dev/null 2>&1
 echo "___" 
 #> /dev/null 2>&1
