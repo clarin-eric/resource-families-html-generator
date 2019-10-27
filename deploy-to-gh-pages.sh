@@ -10,7 +10,5 @@ git config --global user.name "Travis CI"
 git add .
 git commit -m "Generate tables"
 echo https://github-ci-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git
-#> /dev/null 2>&1
 echo "___" 
-#> /dev/null 2>&1
 git push --force "https://github-ci-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPO}" travis:gh-pages > /dev/null 2>&1
