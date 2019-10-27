@@ -11,4 +11,4 @@ deploy:
   - repo: $GITHUB_REPO
   - local_dir: ./
   on: 
-    branches: travis
+    branch: travis
