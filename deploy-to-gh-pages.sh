@@ -6,9 +6,6 @@ set -o errexit
 git config --global user.email "nobody@nobody.org"
 git config --global user.name "Travis CI"
 
-# generate tables
-for D in ./resource_families/*/; do [ -d "$D" ] && ./run.py -i "$D" -o "$D" -r ./rules.json; done
-
 # deploy to tables branch
 cd tables
 git init

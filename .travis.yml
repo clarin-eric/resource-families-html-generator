@@ -1,6 +1,7 @@
 language: python
 script:
-        - bash ./deploy-to-gh-pages.sh
+        - ./generate-tabples.sh
+        - ./deploy-to-gh-pages.sh
 env:
         global:
                 - GITHUB_REPO: "clarin-eric/resource-families-html-generator.git"
