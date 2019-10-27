@@ -9,4 +9,7 @@ deploy:
   verbose: true
   github_token: $GITHUB_TOKEN 
   on:
-    branch: gh-pages
+    branches: 
+      except:
+      - master
+      - travis
