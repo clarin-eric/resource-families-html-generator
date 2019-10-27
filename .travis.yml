@@ -1,6 +1,6 @@
 language: python
 script:
-        - ./generate-tabples.sh
+        - ./generate-tables.sh
         - ./deploy-to-gh-pages.sh
 env:
         global:
