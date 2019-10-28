@@ -8,6 +8,7 @@ deploy:
   name: Deployment Bot
   verbose: true
   github_token: $GITHUB_TOKEN 
+  deployment_file: true
   on:
     branches: 
       - travis
