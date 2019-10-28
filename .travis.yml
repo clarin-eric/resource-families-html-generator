@@ -2,10 +2,8 @@ language: python
 script:
 - "./generate-tables.sh"
 - "./deploy.sh"  
-  
-  #deploy:
-  #provider: pages
-  #skip_cleanup: true
+deploy:
+  skip_cleanup: true
   #email: deploy@travis-ci.org
   #name: Deployment Bot
   #verbose: true
