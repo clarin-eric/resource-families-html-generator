@@ -1,14 +1,16 @@
 language: python
 script:
 - "./generate-tables.sh"
-deploy:
-  provider: pages
-  skip_cleanup: true
-  email: deploy@travis-ci.org
-  name: Deployment Bot
-  verbose: true
-  github_token: $GITHUB_TOKEN 
-  deployment_file: true
-  on:
-    branches: 
-      - travis
+- "./deploy.sh"  
+  
+  #deploy:
+  #provider: pages
+  #skip_cleanup: true
+  #email: deploy@travis-ci.org
+  #name: Deployment Bot
+  #verbose: true
+  #github_token: $GITHUB_TOKEN 
+  #deployment_file: true
+  #on:
+  #branches: 
+  #    - travis
