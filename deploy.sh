@@ -9,8 +9,7 @@ bash ./generate-tables.sh
 echo generated
 # deploy
 cd tables
-ls
-git branch -a
+git init
 git add .
 git commit -m "Deploy tables"
 git push --force https://${GITHUB_TOKEN}:x-oauth-basic@github.com/clarin-eric/resource-families-html-generator.git HEAD:gh-pages
