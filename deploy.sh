@@ -3,9 +3,11 @@
 git config --global user.email "CI-Bot@travis.com"
 git config --global user.name "Travis Bot"
 
-git init
+
 git branch -a
 git status
+ls
+ls ./tables/
 git add .
 git status
 git commit -m "Deploy tables"
