@@ -3,8 +3,10 @@
 git config --global user.email "CI-Bot@travis.com"
 git config --global user.name "Travis Bot"
 
+set -e
+
 # generate tables
-mkdir tables
+mkdir tables || true
 bash ./generate-tables.sh
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "master" ]; then exit 0; fi
