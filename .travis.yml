@@ -7,8 +7,8 @@ deploy:
   skip_cleanup: true
   on:
     branch: 
-    - master
+    - dev
 notifications:
   email:
     on_success: change
-on_failure: always
+    on_failure: always
