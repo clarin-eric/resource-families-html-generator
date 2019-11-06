@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import argparse
 import os
@@ -24,12 +24,14 @@ if __name__ == "__main__":
 
     # input is a single file
     if os.path.isfile(args.i):
+        print("Processing file: ", args.i)
         data = read_data(args.i)
         title = table_title(args.i)
         table = title + clartable.generate(data)
         output.write(table)
     # input is a folder
     else:
+        print("Processing directory: ", args.i)
         for root, subdir, files in os.walk(args.i):
             subdir.sort()
             files.sort()
@@ -37,6 +39,7 @@ if __name__ == "__main__":
                 if os.path.basename(root) != '':
                     output.write(section_title(root))
                 for _file in files:
+                    print("Processing file: ", _file)
                     data = read_data(os.path.join(root, _file))
                     # generate table:
                     if _file != '':
