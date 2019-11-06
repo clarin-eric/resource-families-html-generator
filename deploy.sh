@@ -1,7 +1,7 @@
 #!/bin/bash
 
-git config --global user.email "CI-Bot@travis.com"
-git config --global user.name "Travis Bot"
+git config user.name "Travis CI"
+git config user.email "$COMMIT_AUTHOR_EMAIL"
 
 set -e
 
