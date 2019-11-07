@@ -55,6 +55,7 @@ Historical corpora
     └── 2-Multilingual corpora.csv
 ```
 Will produce:
+
 ![Examplary corpora](docs/media/corpora.png)
 
 ### Rules format
