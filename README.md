@@ -36,11 +36,26 @@ In order to create html table from .csv file with default rules, the file requir
 
 Corpus | Corpus_URL | Language | Size | Annotation | Licence | Description | Buttons | Buttons_URL | Publication | Publication_URL | Note
 -------|------------|----------|------|------------|---------|-------------|---------|-------------|-------------|-----------------|-------
-Example Corpus Name | www.examplaryurl.com | English | 100 million tokens | tokenised, PoS-tagged, lemmatised | CC-BY | First examplary sentence#SEPSecond examplary sentence to be started from new line with intend#SEPExample with ```<a href="http://some.url">hyperlink</a>``` in it | Concordancer#SEPDownload | https://www.concordancer.com/#SEPhttps://www.download.com | Smith et al. (3019) | https://publication.url | Note text to be displayed in button field
+Example Corpus Name | www.examplaryurl.com | English | 100 million tokens | tokenised, PoS-tagged, lemmatised | CC-BY | First examplary sentence#SEPSecond examplary sentence to be started from new line#SEPExample with ```<a href="http://some.url">hyperlink</a>``` in it | Concordancer#SEPDownload | https://www.concordancer.com/#SEPhttps://www.download.com | Smith et al. (3019) | https://publication.url | Note text to be displayed in button field
 
 Resulting table:
 ![Examplary table](docs/media/example.png)
 
+### Table titles and ordering
+Table title will be derived from the .csv file name in format X-table_title.csv, where X is index used for table ordering. 
+Tables can be grouped into sections by storing them in the intermediate directory within corpora that is subject to the same indexation principle as .csv files.
+For example corpora with structure:
+```bash
+Historical corpora
+├── 1-Historical corpora in the CLARIN infrastructure
+│   ├── 1-Monolingual corpora.csv
+│   └── 2-Multilingual corpora.csv
+└── 2-Other historical corpora
+    ├── 1-Monolingual corpora.csv
+    └── 2-Multilingual corpora.csv
+```
+Will produce:
+![Examplary corpora](docs/media/corpora.png)
 
 ### Rules format
 Rules are composed of nested json notation of tags and field. 
