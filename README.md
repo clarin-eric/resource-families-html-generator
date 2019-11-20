@@ -32,7 +32,7 @@ optional arguments:
 ```
 
 ### CSV format
-In order to create html table from .csv file with default rules, the file requires following columns (order not important):
+In order to create html table from .csv file with default rules, the file requires __all of following columns__ (order not important). Note that names of columns are case sensitive.
 
 Corpus | Corpus_URL | Language | Size | Annotation | Licence | Description | Buttons | Buttons_URL | Publication | Publication_URL | Note
 -------|------------|----------|------|------------|---------|-------------|---------|-------------|-------------|-----------------|-------
