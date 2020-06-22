@@ -1,0 +1,4 @@
+Corpus,Corpus_URL,Language,Size,Annotation,Licence,Description,Buttons,Buttons_URL,Publication,Publication_URL,Note
+SYN2015: representative corpus of written Czech,http://hdl.handle.net/11234/1-1593,Czech,"100,000,000 words","MSD-tagged, lemmatised",Czech National Corpus (Shuffled Corpus Data),"This is a written representative corpus that includes texts from 2010 to 2014. It is presented in the semi-XML format.
+
+The corpus is available for download from LINDAT as well as for online querying through the KonText concordancer.",Download,http://hdl.handle.net/11234/1-1593,Hnátková et al. 2014,http://www.lrec-conf.org/proceedings/lrec2014/pdf/294_Paper.pdf,
