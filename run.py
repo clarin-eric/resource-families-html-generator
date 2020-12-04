@@ -8,8 +8,8 @@ from reader import read_data, read_rules
 from utils import table_title, section_title
 
 parser = argparse.ArgumentParser(description='Create html table from given data and rules')
-parser.add_argument('-i', metavar='PATH', required=True, help='path to a .csv file or folder with .csv files')
-parser.add_argument('-r', metavar='PATH', required=True, help='path to json file with rules')
+parser.add_argument('-i', metavar='PATH', default='./resource_families/', required=True, help='path to a .csv file or folder with .csv files')
+parser.add_argument('-r', metavar='PATH', default='./rules.json', required=True, help='path to json file with rules')
 parser.add_argument('-o', metavar='PATH', required=True, help='path to file where output html table will be written')
 
 args = parser.parse_args()
