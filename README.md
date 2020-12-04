@@ -34,10 +34,12 @@ optional arguments:
 ```
 
 #### Via CI:
-
+The html tables for resource families can be generated via GitHub. Push new .csv files to `/resouce_families` and after processing they will appear in gh-pages branch.   
 
 ### CSV format
 In order to create html table from .csv file with default rules, the file requires __all of following columns__ (order not important). Note that names of columns are case sensitive. If you need generator to consider additional columns contact <michal@clarin.eu> or adjust __rules.json__.
+
+Make sure, that your .csv files use ; (semicolon) as a column separator. 
 
 Single cell may containt multiple paragraphs or structures split with __#SEP__ separator. Following the example below the Description cell consists of 3 paragraphs. Some of the cells depend on others, looking into Buttons cell there are 2 buttons names split with the separator and respective URLs in Buttons_URL.
 
