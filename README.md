@@ -19,6 +19,8 @@ About
 
 
 ### Usage
+
+#### Locally:
 ```bash
 usage: run.py [-h] -i PATH -r PATH -o PATH
 
@@ -30,6 +32,9 @@ optional arguments:
   -r PATH     path to json file with rules
   -o PATH     path to file where output html table will be written
 ```
+
+#### Via CI:
+
 
 ### CSV format
 In order to create html table from .csv file with default rules, the file requires __all of following columns__ (order not important). Note that names of columns are case sensitive.
