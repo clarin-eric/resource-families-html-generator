@@ -37,11 +37,13 @@ optional arguments:
 
 
 ### CSV format
-In order to create html table from .csv file with default rules, the file requires __all of following columns__ (order not important). Note that names of columns are case sensitive.
+In order to create html table from .csv file with default rules, the file requires __all of following columns__ (order not important). Note that names of columns are case sensitive. If you need generator to consider additional columns contact <michal@clarin.eu> or adjust __rules.json__.
+
+Single cell may containt multiple paragraphs or structures split with __#SEP__ separator. Following the example below the Description cell consists of 3 paragraphs. Some of the cells depend on others, looking into Buttons cell there are 2 buttons names split with the separator and respective URLs in Buttons_URL.
 
 Corpus | Corpus_URL | Language | Size | Annotation | Licence | Description | Buttons | Buttons_URL | Publication | Publication_URL | Note
 -------|------------|----------|------|------------|---------|-------------|---------|-------------|-------------|-----------------|-------
-Example Corpus Name | www.examplaryurl.com | English | 100 million tokens | tokenised, PoS-tagged, lemmatised | CC-BY | First examplary sentence#SEPSecond examplary sentence to be started from new line#SEPExample with ```<a href="http://some.url">hyperlink</a>``` in it | Concordancer#SEPDownload | https://www.concordancer.com/#SEPhttps://www.download.com | Smith et al. (3019) | https://publication.url | Note text to be displayed in button field
+Example Corpus Name | www.examplaryurl.com | English | 100 million tokens | tokenised, PoS-tagged, lemmatised | CC-BY | First examplary sentence #SEPSecond examplary sentence to be started from new line #SEPExample with ```<a href="http://some.url">hyperlink</a>``` in it | Concordancer#SEPDownload | https://www.concordancer.com/ #SEPhttps://www.download.com | Smith et al. (3019) | https://publication.url | Note text to be displayed in button field
 
 Resulting table:
 ![Examplary table](docs/media/example.png)
