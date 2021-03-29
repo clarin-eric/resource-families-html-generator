@@ -14,7 +14,6 @@ parser.add_argument('-o', metavar='PATH', required=True, help='path to file wher
 
 args = parser.parse_args()
 
-
 if __name__ == "__main__":
     rules = read_rules(args.r)
     clartable = Clartable(rules)
@@ -23,10 +22,12 @@ if __name__ == "__main__":
     output = open(os.path.join('./tables/', os.path.basename(os.path.normpath(args.o)) + '.html'), 'w')
 
     # input is a single file
-    if os.path.isfile(args.i):
-        print("Processing file: ", args.i)
-        data = read_data(args.i)
-        title = table_title(args.i)
+    input_path = os.path.expanduser(args.i)
+    if os.path.isfile(os.path.normpath(input_path)):
+        print("Processing file: ", input_path)
+        data = read_data(input_path)
+        print(data)
+        title = table_title(input_path)
         table = title + clartable.generate(data)
         output.write(table)
     # input is a folder
