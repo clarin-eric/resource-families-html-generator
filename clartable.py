@@ -182,9 +182,9 @@ class Field:
                 #TODO find a way to remove hardcoded button icons
                 if 'Buttons' in self.columns:
                     if 'Download' in fields_data:
-                        tmp = fields_data[:1] + ('glyphicon glyphicon-download',) + fields_data[1:]
+                        tmp = fields_data[:1] + ('fa fa-arrow-circle-o-down',) + fields_data[1:]
                     else:
-                        tmp = fields_data[:1] + ('glyphicon glyphicon-search',) + fields_data[1:]
+                        tmp = fields_data[:1] + ('fa fa-search',) + fields_data[1:]
                 ret += self.text % tmp 
                 ret += '\n'
             return ret

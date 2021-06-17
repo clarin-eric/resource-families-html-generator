@@ -28,7 +28,7 @@
 					
 				]},
 				{"tag": "<td valign=\"top\">", "fields":[
-					{"text": "<p><a class=\"btn btn-primary\" href=\"%s\"><span class=\"%s\"></span>%s</a></p>", "optional": true, "sep": "#SEP", "columns": ["Buttons_URL", "Buttons"]},
+					{"text": "<p><a class=\"btn btn-primary text-nowrap\" href=\"%s\"><span class=\"%s\"></span>%s</a></p>", "optional": true, "sep": "#SEP", "columns": ["Buttons_URL", "Buttons"]},
 					{"text": "<p>%s</p>", "optional": true, "columns": ["Note"]}
 				]}
 			]}
