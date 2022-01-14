@@ -14,7 +14,12 @@ def read_data(path_to_data):
     return data
 
 def get_title(file_path):
-    return ' '.join(os.path.basename(file_path).split('-')[1:]).replace('.csv', '')
+    clean_title = ''
+    if(os.path.basename(file_path)[:1].isdigit()):
+        clean_title = ' '.join(os.path.basename(file_path).split('-')[1:]).replace('.csv', '')
+    else:
+        clean_title = os.path.basename(file_path)
+    return clean_title
 
 def table_title(file_path):
     '''
