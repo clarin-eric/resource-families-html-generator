@@ -1,0 +1,497 @@
+<h2 id="Normalization">Normalization</h2>
+<h3 id"table-title">Tools for normalization in the CLARIN infrastructure</h3>
+<table class ="table" cellspacing="5">
+	<thead>
+		<tr>
+			<th valign="top">Tool
+			</th>
+			<th valign="top">Language
+			</th>
+			<th valign="top">Description
+			</th>
+			<th valign="top">Availability
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://portal.clarin.nl/node/19258">Text Tonsorium</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>tokenization, segmentation, lemmatization, PoS-tagging, normalization, syntax analysis, NER, format transformations
+					<br>
+					<strong>Domain: </strong>independent
+					<br>
+					<strong>Licence: </strong>GPL
+				</p>
+			</td>
+			<td valign="top">
+				Afrikaans, Albanian, Armenian, Basque, Bosnian, Breton, Bulgarian, Catalan, Chinese, Corsican, Croatian, Czech, Danish, Dutch, English, Esperanto, Estonian, Faroese, Finnish, French, Galician, Georgian, German, Greek, Middle Low German, Haitian, Hindi, Hungarian, Icelandic, Indonesian, Inuktitut, Irish, Italian, Javanese, Kannada, Kurdish, Latin, Latvian, Lithuanian, Luxembourgish, Macedonian, Malay, Malayalam, Maltese, Norwegian, Occitan, Persian, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Slovenian, Spanish, Swahili, Swedish, Tamil, Turkish, Ukranian, Uzbek, Vietnamese, Welsh, Yiddish
+			</td>
+			<td valign="top">
+				<p>Automatic construction and execution of several NLP workflows, which include normalisation.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIN-DK<br>
+				<strong>Platform: </strong>Ubuntu<br>
+				
+				
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://github.com/kuhumcst/texton"><span class="fa fa-search"></span>download</a></p>
+<p><a class="btn btn-primary text-nowrap" href="https://cst.dk/WMS/"><span class="fa fa-search"></span>web application</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://lindat.cz/services/korektor/">Korektor</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>normalization
+					<br>
+					<strong>Licence: </strong>CC-BY-NC-A (models)
+				</p>
+			</td>
+			<td valign="top">
+				Czech
+			</td>
+			<td valign="top">
+				<p>Korektor is a statistical spellchecker and (occasional) grammar checker released under <a href="http://opensource.org/licenses/BSD-2-Clause">2-Clause BSD license</a> and versioned using <a href="http://semver.org/">Semantic Versioning</a>.</p>
+<p>Korektor started with Michal Richter's diploma thesis <a href="https://redmine.ms.mff.cuni.cz/documents/1">Advanced Czech Spellchecker</a>, but it is being developed further. There are two versions: a command line utility (tested on Linux, Windows and OS X) and a REST service with <a href="https://lindat.mff.cuni.cz/services/korektor/api-reference.php">publicly available API</a> and <a href="https://lindat.mff.cuni.cz/services/korektor/">HTML front end</a>.</p>
+
+				<strong>CLARIN Centre: </strong>LINDAT<br>
+				<strong>Platform: </strong>Linux, Windows, OS X<br>
+				<strong>Input format: </strong>plain text<br>
+				<strong>Output format: </strong>enriched text<br>
+				<strong>Publication: </strong><a href="https://www.clarin.eu/resource-families/tools-normalisation#Richter%20et%20al.%202012">Richter et al. (2012)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://lindat.mff.cuni.cz/services/korektor/"><span class="fa fa-search"></span>web service</a></p>
+<p><a class="btn btn-primary text-nowrap" href="https://lindat.mff.cuni.cz/services/korektor/api-reference.php"><span class="fa fa-search"></span>API</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://github.com/LanguageMachines/foliautils">FoLiA-wordtranslate</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>normalization
+					<br>
+					<strong>Domain: </strong>historical texts
+					<br>
+					<strong>Licence: </strong>GNU Public License v3
+				</p>
+			</td>
+			<td valign="top">
+				Dutch
+			</td>
+			<td valign="top">
+				<p>This tool does word-by-word lookups in a bilingual lexicon, applies some transformation rules and additionally it may consult the INT Historical Lexicon (to be obtained separately due to licensing restrictions). The aim is to use the modernisation layer to do further linguistic enrichment using contemporary models. This tool is part of the FoLiA-Utils collection as it operates on documents in the FoLiA format. Standalone it is only of very limited interest to others.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIAH-NL<br>
+				<strong>Platform: </strong>Linux/POSIX (C++)<br>
+				<strong>Input format: </strong>plain text, FoLiA-XML<br>
+				<strong>Output format: </strong>FoLiA-XML, plaintext<br>
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://metacpan.org/release/DTA-CAB"><span class="fa fa-search"></span>download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://github.com/proycon/nederlab-pipeline">Nederlab Pipeline</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>modernisation, normalisation, tokenisation, conversion, PoS-tagging, lemmatisation, NER with entity linking (all functionality is derived from the individual parts rather than an inherent part of the workflow)
+					<br>
+					<strong>Domain: </strong>independent
+					<br>
+					<strong>Licence: </strong>GNU Public License v3
+				</p>
+			</td>
+			<td valign="top">
+				Dutch
+			</td>
+			<td valign="top">
+				<p>This is a linguistic enrichment pipeline for Historical Dutch as developed for and used in the <a href="https://www.nederlab.nl/">Nederlab project</a>. This workflow, powered by <a href="https://www.nextflow.io/">Nextflow</a>, invokes various tools, including <a href="https://languagemachines.github.io/frog">Frog</a> and <a href="https://github.com/LanguageMachines/piccl">FoLiA-wordtranslate</a>, as well as other tools such as <a href="https://languagemachines.github.io/ucto">ucto</a> (a tokeniser), <a href="https://github.com/proycon/foliatools">folialangid</a> (language identification), <a href="https://github.com/proycon/foliatools">tei2folia</a> (conversion from a subset of TEI to FoLiA, which serves as the exchange format for all our tooling, as well as the final corpus format for Nederlab). Due to the high complexity in tooling, this workflow and all dependencies are distributed as part of the <a href="https://proycon.github.io/LaMachine">LaMachine</a> distribution.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIAH-NL<br>
+				<strong>Platform: </strong>Linux/POSIX (workflow itself runs on JVM, underlying components are mostly implemented in C++ and Python)<br>
+				<strong>Input format: </strong>FoLiA XML<br>
+				<strong>Output format: </strong>FoLiA XML<br>
+				<strong>Publication: </strong><a href="https://www.clarin.eu/resource-families/tools-normalization#Brugman%20et%20al.%202016">Brugman et al. (2016)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://github.com/proycon/nederlab-pipeline/"><span class="fa fa-search"></span>download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://portal.clarin.nl/node/14376">TiCClops</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>corpus processing, normalization
+					<br>
+					<strong>Domain: </strong>independent
+				</p>
+			</td>
+			<td valign="top">
+				Dutch
+			</td>
+			<td valign="top">
+				<p>This tool is designed to search a corpus for all existing variants of (potentially) all words occurring in the corpus. This corpus can be one text, or several, in one or more directories, located on one or more machines. TICCL creates word frequency lists, listing for each word type how often the word occurs in the corpus. These frequencies of the normalized word forms are the sum of the frequencies of the actual word forms found in the corpus.</p>
+<p>TICCL is a system that is intended to detect and correct typographical errors (misprints) and OCR errors (optical character recognition) in texts. When books or other texts are scanned from paper by a machine, that then turns these scans, i.e. images, into digital text files, errors occur. For instance, the letter combination `in' can be read as `m', and so the word `regeering' is incorrectly reproduced as `regeermg'. TICCL can be used to detect these errors and to suggest a correct form.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIAH-NL<br>
+				<strong>Platform: </strong>cross-platform<br>
+				<strong>Input format: </strong>images (tiff, djvu), plain text, xml, csv<br>
+				<strong>Output format: </strong>xml<br>
+				<strong>Publication: </strong><a href="https://www.clarin.eu/resource-families/tools-normalization#Reynaert%202010">Reynaert (2010)</a></p>
+			</td>
+			<td valign="top">
+				
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://portal.clarin.nl/node/14367">@Philostei</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>corpus processing, normalization
+					<br>
+					<strong>Domain: </strong>independent
+				</p>
+			</td>
+			<td valign="top">
+				Dutch, English, Finnish, French, German, German (Fraktur), Classical Greek, Modern Greek, Icelandic, Italian, Latin, Polish, Portuguese, Russian, Spanish, Swedish
+			</td>
+			<td valign="top">
+				<p>This tool uses a combination of a <a href="https://opensource.google/projects/tesseract">Tesseract</a> webservice for text layout analysis and OCR and a multilingual version of <a href="https://portal.clarin.nl/node/14376">TICCL</a> for normalization.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIAH-NL<br>
+				<strong>Platform: </strong>cross-platform<br>
+				<strong>Input format: </strong>images (tiff, djvu), plain text, XML, csv<br>
+				<strong>Output format: </strong>XML<br>
+				<strong>Publication: </strong><a href="https://www.clarin.eu/resource-families/tools-normalization#Betti%20et%20al.%202017">Betti, Reynaert and van den Berg (2017)</a></p>
+			</td>
+			<td valign="top">
+				
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://portal.clarin.nl/node/14392">PICCL: Philosophical Integrator of Computational and Corpus Libraries</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>OCR, normalization, tokenisation, dependency parsing, shallow parsing, lemmatization, morphological analysis, NER, PoS-tagging
+					<br>
+					<strong>Domain: </strong>independent
+					<br>
+					<strong>Licence: </strong>GNU GPL
+				</p>
+			</td>
+			<td valign="top">
+				Dutch, Swedish, Russian, Spanish, Portuguese, English, German, French, Italian, Finnish, Modern Greek, Classical Greek, Icelandic, German (Fraktur), Latin, Romanian
+			</td>
+			<td valign="top">
+				<p>This is a set of workflows for corpus building through OCR, post-correction, modernization of historic language and Natural Language Processing. It combines <a href="https://opensource.google/projects/tesseract">Tesseract Optical Character Recognition</a>, <a href="https://portal.clarin.nl/node/14376">TICCL</a> and <a href="https://languagemachines.github.io/frog">FROG</a> functionality in a single pipeline.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIAH-NL<br>
+				<strong>Platform: </strong>cross-platform<br>
+				<strong>Input format: </strong>images (tiff, vnd.djvu), plain text, xml<br>
+				<strong>Output format: </strong>FoLiA XML<br>
+				<strong>Publication: </strong><a href="https://www.clarin.eu/resource-families/tools-normalization#Reynaert%20et%20al.%202015">Reynaert et al. (2015)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://github.com/LanguageMachines/piccl"><span class="fa fa-search"></span>download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://ucrel.lancs.ac.uk/vard/about/">VARD2</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>normalization
+					<br>
+					<strong>Domain: </strong>historical texts
+					<br>
+					<strong>Licence: </strong>CC-BY-NC-SA 2.0
+				</p>
+			</td>
+			<td valign="top">
+				English
+			</td>
+			<td valign="top">
+				<p>This tool performs manual and automatic spelling normalisation based on letter replacement rules, phonetic matching (extended Soundex), edit distance, and variant mappings.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIAH-UK<br>
+				<strong>Platform: </strong>cross-platform (java)<br>
+				<strong>Input format: </strong>plain text, rtf, SGML, XML<br>
+				<strong>Output format: </strong>XML<br>
+				<strong>Publication: </strong><a href="http://ucrel.lancs.ac.uk/vard/publications/">see here</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://ucrel.lancs.ac.uk/vard/availability/"><span class="fa fa-search"></span>download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/21.11120/0000-0003-7D99-5">CAB historical text analysis</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>normalisation, PoS-tagging, lemmatisation
+					<br>
+					<strong>Domain: </strong>historical texts
+				</p>
+			</td>
+			<td valign="top">
+				German
+			</td>
+			<td valign="top">
+				<p>This tool is a WebLicht stub for the <a href="http://odo.dwds.de/~jurish/software/DTA-CAB/">DTA::CAB</a> service and provides orthographic normalisation, PoS-tagging and lemmatization for historical German.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIN-D<br>
+				<strong>Platform: </strong>cross-platform<br>
+				<strong>Input format: </strong>plain text, XML<br>
+				<strong>Output format: </strong><a href="https://universaldependencies.org/tagset-conversion/de-stts-uposf.html">stts</a> tagset for PoS<br>
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.deutschestextarchiv.de/public/cab/?fmt=tcf"><span class="fa fa-search"></span>web application</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11858/00-203C-0000-0023-21BB-3">CAB orthographic canonicalizer</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>normalisation
+					<br>
+					<strong>Domain: </strong>historical texts
+				</p>
+			</td>
+			<td valign="top">
+				German
+			</td>
+			<td valign="top">
+				<p>This tool a WebLicht stub for the <a href="http://odo.dwds.de/~jurish/software/DTA-CAB/">DTA::CAB</a> service and provides orthographic normalization for historical German.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIN-D<br>
+				<strong>Platform: </strong>cross-platform<br>
+				<strong>Input format: </strong>plain text, XML<br>
+				<strong>Output format: </strong>unspecified<br>
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.deutschestextarchiv.de/public/cab/?fmt=tcf-orth"><span class="fa fa-search"></span>web application</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://odo.dwds.de/~jurish/software/DTA-CAB/">DTA::CAB</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>lemmatization, PoS-tagging, normalization
+					<br>
+					<strong>Domain: </strong>historical texts
+					<br>
+					<strong>Licence: </strong><a href="https://metacpan.org/pod/DTA::CAB#COPYRIGHT-AND-LICENSE">see here</a>
+				</p>
+			</td>
+			<td valign="top">
+				German
+			</td>
+			<td valign="top">
+				<p>This is an abstract framework for robust linguistic annotation, with public web-service including normalization and lemmatization for historical German</p>
+
+				<strong>CLARIN Centre: </strong>CLARIN-D<br>
+				<strong>Platform: </strong>cross-platform<br>
+				<strong>Input format: </strong><a href="http://odo.dwds.de/~jurish/software/DTA-CAB/doc/html/DTA.CAB.WebServiceHowto.html#I-O-Formats">various</a><br>
+				<strong>Output format: </strong><a href="http://odo.dwds.de/~jurish/software/DTA-CAB/doc/html/DTA.CAB.WebServiceHowto.html#I-O-Formats">various</a><br>
+				<strong>Publication: </strong><a href="https://www.clarin.eu/resource-families/tools-normalization#Jurish%202012">Jurish (2012)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://metacpan.org/release/DTA-CAB"><span class="fa fa-search"></span>download</a></p>
+<p><a class="btn btn-primary text-nowrap" href="https://www.deutschestextarchiv.de/public/cab/"><span class="fa fa-search"></span>web application</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="">Normo</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>normalization
+					<br>
+					<strong>Domain: </strong>historical texts
+				</p>
+			</td>
+			<td valign="top">
+				Hungarian
+			</td>
+			<td valign="top">
+				<p>This tool is an automatic pre-normalizer for Middle Hungarian Bible translations. It employs a memory-based and a rule-based module, which consists of character- and token level rewrite rules. The tool was used for building the <a href="http://oldhungariancorpus.nytud.hu/">Old Hungarian Corpus</a>.</p>
+
+				<strong>CLARIN Centre: </strong>HUN-CLARIN<br>
+				
+				<strong>Input format: </strong>unspecified<br>
+				<strong>Output format: </strong>unspecified<br>
+				<strong>Publication: </strong><a href="https://www.clarin.eu/resource-families/tools-normalization#Vad%C3%A1sz%20and%20Simon%202018">Vadász and Simon (2018)</a></p>
+			</td>
+			<td valign="top">
+				
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://notendur.hi.is/~kristinb/clarin-2015-6okt.pdf">Skrambi</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>OCR, normalization
+					<br>
+					<strong>Domain: </strong>historical texts
+				</p>
+			</td>
+			<td valign="top">
+				Icelandic
+			</td>
+			<td valign="top">
+				<p>This tool is a spell-checking application based on a noisy channel model, which can be used to achieve a true copy of the original spelling of historical OCR texts, and to produce a parallel text with modern spelling.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIN-IS<br>
+				
+				<strong>Input format: </strong>unspecified<br>
+				<strong>Output format: </strong>unspecified<br>
+				
+			</td>
+			<td valign="top">
+				
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://github.com/clarinsi/csmtiser">CSMTiser</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>normalization
+					<br>
+					<strong>Domain: </strong>social media
+					<br>
+					<strong>Licence: </strong>GNU Lesser General Public License v3.0
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This is a trainable tool for text normalisation, based on <a href="http://www.statmt.org/moses/">Moses</a>.</p>
+
+				<strong>CLARIN Centre: </strong>CLARIN.SI<br>
+				<strong>Platform: </strong>Linux<br>
+				<strong>Input format: </strong>unspecified<br>
+				<strong>Output format: </strong>unspecified<br>
+				<strong>Publication: </strong><a href="https://www.clarin.eu/resource-families/tools-normalization#Ljube%C5%A1i%C4%87%20et%20al.%202015">Ljubešić et al. (2016)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://github.com/clarinsi/csmtiser"><span class="fa fa-search"></span>download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://hdl.handle.net/11372/LRT-712">Turkish Natural Language Processing Pipeline</a>
+				</p>
+				<p>
+					<strong>Functionality: </strong>tokenisation, sentence splitting, normalisation,de-asciification, vowelisation, spelling correction, morphological analysis/disambiguation, named entity recognition, dependency parsing
+					<br>
+					<strong>Domain: </strong>independent
+				</p>
+			</td>
+			<td valign="top">
+				Turkish
+			</td>
+			<td valign="top">
+				<p>This is a pipeline of state-of-the-art Turkish NLP tools.</p>
+
+				<strong>CLARIN Centre: </strong>LINDAT<br>
+				<strong>Platform: </strong>cross-platform<br>
+				<strong>Input format: </strong>plain text<br>
+				<strong>Output format: </strong>plain text<br>
+				<strong>Publication: </strong><a href="https://www.clarin.eu/resource-families/tools-normalization#Eryi%C4%9Fit%202014">Eryiğit (2014)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://tools.nlp.itu.edu.tr/Normalization"><span class="fa fa-search"></span>web application</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://tools.nlp.itu.edu.tr/api_usage.jsp"><span class="fa fa-search"></span>web API</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+</table>
