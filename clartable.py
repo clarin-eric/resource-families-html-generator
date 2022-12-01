@@ -241,7 +241,7 @@ class Field:
         else:
             self.sep = None 
 
-    def generate(self, data_row) -> str:
+    def generate(self, data_row: Series) -> str:
         """
         Generate Field (a cell) in the table
 
