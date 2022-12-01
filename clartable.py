@@ -110,7 +110,7 @@ class RowTag:
         Constructor for RowTag instance
 
         :param tag_dict: JSON representation of tag rules, (each line in rules.json specifies separate tag_dict,
-                         row tags can not be nested
+                         row tags can be nested
         :type tag_dict: dict
         """
         self.tag: str
@@ -218,7 +218,7 @@ class Clartable(Tag):
 
 class Field:
     """
-    Fields are parts of the table which require data from .csv file, storing str with placeholders,
+    Fields are content of cells of HTML table which require data from .csv file, storing str with placeholders for data,
     e.g. "<strong>Size: </strong>%s"
 
     :ivar columns: list of column names containing data for the field
@@ -233,13 +233,9 @@ class Field:
         :param field_dict: dictionary with Field creation rules
         :type field_dict: dict
         """
-        # Column names to fetch data from data row. Ordering of list members defines order of variable placeholders
         self.columns: List[str]
-        # Ommit field if data field empty
         self.optional: bool
-        # String with variable placeholders
         self.text: str
-        # Separator placeholder, default '#SEP'
         self.sep: str
 
         self.optional = field_dict['optional']
