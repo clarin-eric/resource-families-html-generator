@@ -16,7 +16,7 @@
 					{"tag": "<p>", "on_next": "<br>", "fields": [
 						{"text": "<strong>Size: </strong>%s", "optional": true, "columns": ["Size"]},
 						{"text": "<strong>Annotation: </strong>%s", "optional": true, "columns": ["Annotation"]},
-						{"text": "<strong>Licence: </strong>%s", "optional": true, "columns": ["Licence"]}
+						{"text": "<strong>Licence: </strong><a href=\"%s\">%s</a>", "optional": true, "columns": ["Licence_URL", "Licence"]}
 					]}
 				]},
 				{"tag": "<td valign=\"top\">", "fields":[
