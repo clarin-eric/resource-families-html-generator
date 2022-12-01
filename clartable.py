@@ -4,17 +4,17 @@ from typing import List, Set
 
 class Tag:
     """
-    Class for instancing tags in the tag tree outside of <tbody>.
+    Class for instancing tags in the tag tree outside <tbody>.
 
-    :param tag_dict: JSON representation of tag rules, (each line in rules.json specifies separate tag_dict,
-                     tags can be nested
+    :param tag_dict: JSON representation of tag rules (each line in rules.json specifies separate tag_dict,
+                     tags can be nested)
     :type tag_dict: dict
 
     note:: tags enclosed by <tbody> in order to allow multiple rows generation without repeating headers are created using RowTag, not this class.
     """
     def __init__(self, tag_dict: dict):
         """
-        Constructor for tag instance
+        Constructor for Tag instance
         """
         # Tag string, eg. <h1>
         self.tag: str
@@ -96,7 +96,7 @@ class RowTag:
     Class for instancing tags in the tag tree within <tbody>
 
     :param tag_dict: JSON representation of tag rules, (each line in rules.json specifies separate tag_dict,
-                     tags can be nested
+                     row tags can not be nested
     :type tag_dict: dict
 
     note:: RowTag is used for generation tags enclosed by <tbody> in order to allow multiple rows generation
@@ -104,6 +104,9 @@ class RowTag:
     """
 
     def __init__(self, tag_dict):
+        """
+        Constructor for RowTag instance
+        """
         # Tag string, eg. <h1>
         self.tag: str
         # End tag string eg. </h1>
@@ -148,7 +151,7 @@ class RowTag:
         :param data_row: pandas Series representing .csv record data
         :type data_row: pandas.Series
         :param stack: List instance interpreted as tag stack for keeping track of unclosed tags
-        :type: List
+        :type stack: List
 
         :return: String representation of HTML tagtree
         :rtype: str
@@ -176,18 +179,33 @@ class RowTag:
 
 
 class Clartable(Tag):
-    '''
+    """
     Seed of a tag tree
-    
-    Args:
-        tag: JSON dict with table rules
-    '''
-    def __init__(self, tag):
-        super().__init__(tag)
+
+    :param tag_dict: JSON representation of tag rules
+    :type tag_dict: dict
+    """
+    def __init__(self, tag_dict):
+        """
+        Constructor for Clartable instance
+        """
+        super().__init__(tag_dict)
+        # Stack for tracking opened tags
         self.tag_stack: list = []
 
-    def generate(self, data_frame, stack: list = None) -> str:
-        ret = ''
+    def generate(self, data_frame: DataFrame, stack: list = None) -> str:
+        """
+        Recursively generate tag tree
+
+        :param data_frame: pandas DataFrame representing .csv record data
+        :type data_row: pandas.DataFrame
+        :param stack: List instance interpreted as tag stack for keeping track of unclosed tags
+        :type stack: List
+
+        :return: String representation of HTML tagtree
+        :rtype: str
+        """
+        ret: str = ''
         stack = self.tag_stack
         for tag in self.tags:
             ret += tag.generate(data_frame, stack)
@@ -195,25 +213,53 @@ class Clartable(Tag):
 
 
 class Field:
-    '''
-    Fields are parts of the table which require data from .csv file, but stores text, e.g. "<strong>Size: </strong>%s"
-    '''
-    def __init__(self, field_dict):
-        self.optional: bool = field_dict['optional']
-        self.text: str = field_dict['text']
-        self.columns: List[str] = field_dict['columns']
+    """
+    Fields are parts of the table which require data from .csv file, storing str with placeholders,
+    e.g. "<strong>Size: </strong>%s"
+
+    :param field_dict: dictionary with Field creation rules
+    :type field_dict: dict
+    """
+    def __init__(self, field_dict: dict):
+        """
+        Constructor for Field instance
+        """
+        # Column names to fetch data from data row. Ordering of list members defines order of variable placeholders
+        self.columns: List[str]
+        # Ommit field if data field empty
+        self.optional: bool
+        # String with variable placeholders
+        self.text: str
+        # Separator placeholder, default '#SEP'
+        self.sep: str
+
+        self.optional = field_dict['optional']
+        self.text = field_dict['text']
+        self.columns = field_dict['columns']
         if 'sep' in field_dict.keys():
             self.sep = field_dict['sep']
         else:
             self.sep = None 
 
-    def generate(self, data_row):
+    def generate(self, data_row) -> str:
+        """
+        Generate Field (a cell) in the table
+
+        :param data_row: pandas Series representing .csv record data
+        :type data_row: pandas.Series
+        :param stack: List instance interpreted as tag stack for keeping track of unclosed tags
+        :type stack: List
+
+        :return: String representation of HTML table cell
+        :rtype: str
+        """
+        ret: str = ''
         fields_data = [data_row[column] for column in self.columns]
         if self.optional:
             if all([field_data == '' for field_data in fields_data]):
-                return ''
+                ret = ''
         if self.sep:
-            split_lists = [[] for i in range(len(self.columns))]
+            split_lists = [[] for _ in range(len(self.columns))]
             for i, field_data in enumerate(fields_data):
                 field_data_split = field_data.split(self.sep)
                 if isinstance(field_data_split, list):
@@ -222,7 +268,6 @@ class Field:
                     split_lists[i].append(field_data_split)
 
             data = list(zip(*split_lists))
-            ret = ''
             for fields_data in data:
                 tmp = fields_data
                 #TODO find a way to remove hardcoded button icons
@@ -233,11 +278,11 @@ class Field:
                         tmp = fields_data[:1] + ('fa fa-search',) + fields_data[1:]
                 ret += self.text % tmp 
                 ret += '\n'
-            return ret
 
         elif len(fields_data) > 1:
             fields_data = tuple(fields_data)
+            ret = self.text % fields_data
         else:
             fields_data = fields_data[0]
-
-        return self.text % fields_data
+            ret = self.text % fields_data
+        return ret
