@@ -5,24 +5,25 @@ from typing import List, Set
 class Tag:
     """
     Class for instancing tags in the tag tree outside <tbody>.
+    :ivar tag: tag string, eg. <h1>
+    :ivar end_tag: end tag string e.g. </h1>
+    :ivar text: tag content with variable placeholders (%s)
+    :ivar on_next: separator/connector tag if tag repeated, e.g. <br> in <p>foo</p><br><p>bar</p>
 
-    :param tag_dict: JSON representation of tag rules (each line in rules.json specifies separate tag_dict,
-                     tags can be nested)
-    :type tag_dict: dict
 
     note:: tags enclosed by <tbody> in order to allow multiple rows generation without repeating headers are created using RowTag, not this class.
     """
     def __init__(self, tag_dict: dict):
         """
         Constructor for Tag instance
+
+        :param tag_dict: JSON representation of tag rules (each line in rules.json specifies separate tag_dict,
+                     tags can be nested)
+        :type tag_dict: dict
         """
-        # Tag string, eg. <h1>
         self.tag: str
-        # End tag string eg. </h1>
         self.end_tag: str
-        # Tag content with variable placeholders (%s)
         self.text: str
-        # Separator/connector tag if tag repeated, e.g. <br> in <p>foo</p><br><p>bar</p>
         self.on_next: str
 
         keys: Set[str] = set(tag_dict)
@@ -95,9 +96,10 @@ class RowTag:
     """
     Class for instancing tags in the tag tree within <tbody>
 
-    :param tag_dict: JSON representation of tag rules, (each line in rules.json specifies separate tag_dict,
-                     row tags can not be nested
-    :type tag_dict: dict
+    :ivar tag: tag string, eg. <h1>
+    :ivar end_tag: end tag string e.g. </h1>
+    :ivar text: tag content with variable placeholders (%s)
+    :ivar on_next: separator/connector tag if tag repeated, e.g. <br> in <p>foo</p><br><p>bar</p>
 
     note:: RowTag is used for generation tags enclosed by <tbody> in order to allow multiple rows generation
            without repeating headers
@@ -106,14 +108,14 @@ class RowTag:
     def __init__(self, tag_dict):
         """
         Constructor for RowTag instance
+
+        :param tag_dict: JSON representation of tag rules, (each line in rules.json specifies separate tag_dict,
+                         row tags can not be nested
+        :type tag_dict: dict
         """
-        # Tag string, eg. <h1>
         self.tag: str
-        # End tag string eg. </h1>
         self.end_tag: str
-        # Tag content with variable placeholders (%s)
         self.text: str
-        # Separator/connector tag if tag repeated, e.g. <br> in <p>foo</p><br><p>bar</p>
         self.on_next: str
 
         keys: Set = set(tag_dict)
@@ -182,12 +184,14 @@ class Clartable(Tag):
     """
     Seed of a tag tree
 
-    :param tag_dict: JSON representation of tag rules
-    :type tag_dict: dict
+    :ivar tag_stack: stack keeping track of opened tags
     """
     def __init__(self, tag_dict):
         """
         Constructor for Clartable instance
+
+        :param tag_dict: JSON representation of tag rules
+        :type tag_dict: dict
         """
         super().__init__(tag_dict)
         # Stack for tracking opened tags
@@ -217,12 +221,17 @@ class Field:
     Fields are parts of the table which require data from .csv file, storing str with placeholders,
     e.g. "<strong>Size: </strong>%s"
 
-    :param field_dict: dictionary with Field creation rules
-    :type field_dict: dict
+    :ivar columns: list of column names containing data for the field
+    :ivar optional: boolean, whether to ommit data field if data empty
+    :ivar text: string with variable placeholders
+    :ivar sep: separator placeholder, in default rules.json is set to '#SEP'
     """
     def __init__(self, field_dict: dict):
         """
         Constructor for Field instance
+
+        :param field_dict: dictionary with Field creation rules
+        :type field_dict: dict
         """
         # Column names to fetch data from data row. Ordering of list members defines order of variable placeholders
         self.columns: List[str]
@@ -253,12 +262,12 @@ class Field:
         :return: String representation of HTML table cell
         :rtype: str
         """
-        ret: str = ''
+        ret: str
         fields_data = [data_row[column] for column in self.columns]
-        if self.optional:
-            if all([field_data == '' for field_data in fields_data]):
-                ret = ''
-        if self.sep:
+        if self.optional and all([field_data == '' for field_data in fields_data]):
+            ret = ''
+        elif self.sep:
+            ret = ''
             split_lists = [[] for _ in range(len(self.columns))]
             for i, field_data in enumerate(fields_data):
                 field_data_split = field_data.split(self.sep)
