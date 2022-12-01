@@ -1,17 +1,31 @@
-from typing import List
+from typing import List, Set
 
 
 class Tag:
-    '''
-    Class for tags in the tag tree. Note, that tags enclosed by <tbody> in order to allow multiple rows generation without repeating headers are created using RowTag, not this class. 
-    
-    Args:
-        tag_dict: JSON dict
-    '''
+    """
+    Class for instancing tags in the tag tree.
 
-    def __init__(self, tag_dict):
-        keys = tag_dict.keys()
-        
+    :param tag_dict: JSON representation of tag rules, (each line in rules.json specifies separate tag_dict,
+                     tags can be nested
+    :type tag_dict: dict
+
+    note:: tags enclosed by <tbody> in order to allow multiple rows generation without repeating headers are created using RowTag, not this class.
+    """
+    def __init__(self, tag_dict: dict):
+        """
+        Constructor for tag instance
+        """
+        # Tag string, eg. <h1>
+        self.tag: str
+        # End tag string eg. </h1>
+        self.end_tag: str
+        # Tag content with variable placeholders (%s)
+        self.text: str
+        # Separator/connector tag if tag repeated, e.g. <br> in <p>foo</p><br><p>bar</p>
+        self.on_next: str
+
+        keys: Set[str] = set(tag_dict)
+
         if 'tag' in keys:
             self.tag = tag_dict['tag']
             end_tag = self.tag.split(' ')[0]
@@ -23,7 +37,8 @@ class Tag:
             self.end_tag = ''
        
         if 'tags' in keys:
-            # in order to allow repeatition of row generation, all tags within <tbody> ... </tbody> are instances of RowTag, not Tag 
+            # In order to allow repeatition of row generation, all tags within <tbody> ... </tbody>
+            # are instances of RowTag, not Tag
             if self.tag == '<tbody>':
                 self.tags = [RowTag(tag) for tag in tag_dict['tags']]
             else:
@@ -199,7 +214,3 @@ class Field:
             fields_data = fields_data[0]
 
         return self.text % fields_data
-
-    @property
-    def otpional(self):
-        return self.optional
