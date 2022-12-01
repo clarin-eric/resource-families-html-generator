@@ -1,9 +1,10 @@
+from pandas import DataFrame, Series
 from typing import List, Set
 
 
 class Tag:
     """
-    Class for instancing tags in the tag tree.
+    Class for instancing tags in the tag tree outside of <tbody>.
 
     :param tag_dict: JSON representation of tag rules, (each line in rules.json specifies separate tag_dict,
                      tags can be nested
@@ -56,19 +57,22 @@ class Tag:
         else:
             self.on_next = ''
     
-    def generate(self, data_frame, stack):
-        '''
-        Args:
-            stack: [], a stack of strings in form of </tag> for tag enclosing
-            data_frame: pandas.DataFrame to be passed in depth to the tree till it hits <tbody> tag
+    def generate(self, data_frame: DataFrame, stack: List) -> str:
+        """
+        Recursively generate tag tree
 
-        Returns:
-            string, generated html of a tag with its children
-        '''
+        :param data_frame: pandas DataFrame representing .csv content
+        :type data_frame: pandas.DataFrame
+        :param stack: List instance interpreted as tag stack for keeping track of unclosed tags
+        :type: List
+
+        :return: String representation of HTML tagtree
+        :rtype: str
+        """
+        ret: str = ''
         intend = len(stack) * '\t'
         # <tbody> tag marks beginning of row tags 
         if self.tag == '<tbody>':
-            ret = ''
             # create table row for every data row in csv file
             for _, data_row in data_frame.iterrows():
                 ret += intend + self.tag + self.text + '\n'
@@ -77,7 +81,6 @@ class Tag:
                     ret += tag.generate(data_row, stack)
                 end_tag = stack.pop()
                 ret += intend + end_tag + '\n'
-            return ret
         else:
             ret = intend + self.tag + self.text + '\n'
             stack.append(self.end_tag)
@@ -85,19 +88,32 @@ class Tag:
                 ret += tag.generate(data_frame, stack)
             end_tag = stack.pop()
             ret += intend + end_tag + '\n'
-            return ret
+        return ret
 
 
 class RowTag:
-    '''
-    Class for tags in tag tree enclosed by <tbody>
+    """
+    Class for instancing tags in the tag tree within <tbody>
 
-    Args:
-        tag_dict: JSON dict
-    '''
+    :param tag_dict: JSON representation of tag rules, (each line in rules.json specifies separate tag_dict,
+                     tags can be nested
+    :type tag_dict: dict
+
+    note:: RowTag is used for generation tags enclosed by <tbody> in order to allow multiple rows generation
+           without repeating headers
+    """
 
     def __init__(self, tag_dict):
-        keys = tag_dict.keys()
+        # Tag string, eg. <h1>
+        self.tag: str
+        # End tag string eg. </h1>
+        self.end_tag: str
+        # Tag content with variable placeholders (%s)
+        self.text: str
+        # Separator/connector tag if tag repeated, e.g. <br> in <p>foo</p><br><p>bar</p>
+        self.on_next: str
+
+        keys: Set = set(tag_dict)
         self.tag = tag_dict['tag']
 
         end_tag = self.tag.split(' ')[0]
@@ -125,7 +141,18 @@ class RowTag:
         else:
             self.fields = []
 
-    def generate(self, data_row, stack: list) -> str:
+    def generate(self, data_row: Series, stack: list) -> str:
+        """
+        Recursively generate tag tree
+
+        :param data_row: pandas Series representing .csv record data
+        :type data_row: pandas.Series
+        :param stack: List instance interpreted as tag stack for keeping track of unclosed tags
+        :type: List
+
+        :return: String representation of HTML tagtree
+        :rtype: str
+        """
         intend = len(stack) * '\t'
         ret = intend + self.tag + self.text + '\n'
         stack.append(self.end_tag)
