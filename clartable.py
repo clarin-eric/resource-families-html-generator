@@ -163,9 +163,8 @@ class Field:
     def generate(self, data_row):
         fields_data = [data_row[column] for column in self.columns]
         if self.optional:
-            if all([field_data == '' for field_data in fields_data])
-                if field_data == '':
-                    return ''
+            if all([field_data == '' for field_data in fields_data]):
+                return ''
         if self.sep:
             split_lists = [[] for i in range(len(self.columns))]
             for i, field_data in enumerate(fields_data):
