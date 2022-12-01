@@ -163,7 +163,7 @@ class Field:
     def generate(self, data_row):
         fields_data = [data_row[column] for column in self.columns]
         if self.optional:
-            for field_data in fields_data:
+            if all([field_data == '' for field_data in fields_data])
                 if field_data == '':
                     return ''
         if self.sep:
