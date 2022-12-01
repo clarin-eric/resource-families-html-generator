@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Tag:
     '''
     Class for tags in the tag tree. Note, that tags enclosed by <tbody> in order to allow multiple rows generation without repeating headers are created using RowTag, not this class. 
@@ -38,7 +41,7 @@ class Tag:
         else:
             self.on_next = ''
     
-    def generate(self, stack, data_frame):
+    def generate(self, data_frame, stack):
         '''
         Args:
             stack: [], a stack of strings in form of </tag> for tag enclosing
@@ -56,7 +59,7 @@ class Tag:
                 ret += intend + self.tag + self.text + '\n'
                 stack.append(self.end_tag)
                 for tag in self.tags:
-                    ret += tag.generate(stack, data_row)
+                    ret += tag.generate(data_row, stack)
                 end_tag = stack.pop()
                 ret += intend + end_tag + '\n'
             return ret
@@ -64,7 +67,7 @@ class Tag:
             ret = intend + self.tag + self.text + '\n'
             stack.append(self.end_tag)
             for tag in self.tags:
-                ret += tag.generate(stack, data_frame)
+                ret += tag.generate(data_frame, stack)
             end_tag = stack.pop()
             ret += intend + end_tag + '\n'
             return ret
@@ -107,13 +110,13 @@ class RowTag:
         else:
             self.fields = []
 
-    def generate(self, stack, data_row):
+    def generate(self, data_row, stack: list) -> str:
         intend = len(stack) * '\t'
         ret = intend + self.tag + self.text + '\n'
         stack.append(self.end_tag)
 
         for tag in self.tags:
-            ret += tag.generate(stack, data_row)
+            ret += tag.generate(data_row, stack)
 
         if len(self.fields) > 1 and self.on_next != '':
             for field in self.fields:
@@ -139,22 +142,24 @@ class Clartable(Tag):
     '''
     def __init__(self, tag):
         super().__init__(tag)
-        self.tag_stack = []
+        self.tag_stack: list = []
 
-    def generate(self, data_frame):
+    def generate(self, data_frame, stack: list = None) -> str:
         ret = ''
+        stack = self.tag_stack
         for tag in self.tags:
-            ret += tag.generate(self.tag_stack, data_frame)
+            ret += tag.generate(data_frame, stack)
         return ret
+
 
 class Field:
     '''
     Fields are parts of the table which require data from .csv file, but stores text, e.g. "<strong>Size: </strong>%s"
     '''
     def __init__(self, field_dict):
-        self.optional = field_dict['optional']
-        self.text = field_dict['text']
-        self.columns = field_dict['columns']
+        self.optional: bool = field_dict['optional']
+        self.text: str = field_dict['text']
+        self.columns: List[str] = field_dict['columns']
         if 'sep' in field_dict.keys():
             self.sep = field_dict['sep']
         else:
