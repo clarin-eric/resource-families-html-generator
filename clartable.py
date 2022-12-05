@@ -278,7 +278,7 @@ class Field:
         if not all([field_data == '' for field_data in fields_data]):
             empty_columns = {column for column in self.columns if data_row[column] == ''}
             # Check if rule exists
-            if empty_columns and (not self.ifempty and all(set(ie["columns"]) for ie in self.ifempty) != empty_columns):
+            if empty_columns and not self.optional and (not self.ifempty and all(set(ie["columns"]) for ie in self.ifempty) != empty_columns):
                 raise EmptyColumnError(empty_columns)
             else:
                 for ie in self.ifempty:
