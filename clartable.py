@@ -2,6 +2,9 @@ from pandas import DataFrame, Series
 from typing import List, Set
 
 
+from utils import EmptyColumnError
+
+
 class Tag:
     """
     Class for instancing tags in the tag tree outside <tbody>.
@@ -222,9 +225,11 @@ class Field:
     e.g. "<strong>Size: </strong>%s"
 
     :ivar columns: list of column names containing data for the field
+    :ivar ifempty: alternative rules for fields with empty data source
     :ivar optional: boolean, whether to ommit data field if data empty
-    :ivar text: string with variable placeholders
     :ivar sep: separator placeholder, in default rules.json is set to '#SEP'
+    :ivar text: string with variable placeholders
+
     """
     def __init__(self, field_dict: dict):
         """
@@ -233,10 +238,11 @@ class Field:
         :param field_dict: dictionary with Field creation rules
         :type field_dict: dict
         """
-        self.columns: List[str]
+        self.columns: Set[str]
         self.optional: bool
-        self.text: str
+        self.ifempty: dict
         self.sep: str
+        self.text: str
 
         self.optional = field_dict['optional']
         self.text = field_dict['text']
@@ -244,7 +250,12 @@ class Field:
         if 'sep' in field_dict.keys():
             self.sep = field_dict['sep']
         else:
-            self.sep = None 
+            self.sep = None
+
+        if 'ifempty' in field_dict.keys():
+            self.ifempty = field_dict["ifempty"]
+        else:
+            self.ifempty = {}
 
     def generate(self, data_row: Series) -> str:
         """
@@ -259,9 +270,21 @@ class Field:
         :rtype: str
         """
         ret: str
+        text: str = self.text
         fields_data = [data_row[column] for column in self.columns]
-        if self.optional and all([field_data == '' for field_data in fields_data]):
-            ret = ''
+
+        ret = ''
+        # Check if data fields empty
+        if not all([field_data == '' for field_data in fields_data]):
+            empty_columns = {column for column in self.columns if data_row[column] == ''}
+            # Check if rule exists
+            if empty_columns and (not self.ifempty and all(set(ie["columns"]) for ie in self.ifempty) != empty_columns):
+                raise EmptyColumnError(empty_columns)
+            else:
+                for ie in self.ifempty:
+                    if set(ie["columns"]) == empty_columns:
+                        text = ie["text"]
+                        break
         elif self.sep:
             ret = ''
             split_lists = [[] for _ in range(len(self.columns))]
@@ -281,13 +304,13 @@ class Field:
                         tmp = fields_data[:1] + ('fa fa-arrow-circle-o-down',) + fields_data[1:]
                     else:
                         tmp = fields_data[:1] + ('fa fa-search',) + fields_data[1:]
-                ret += self.text % tmp 
+                ret += text % tmp
                 ret += '\n'
 
         elif len(fields_data) > 1:
             fields_data = tuple(fields_data)
-            ret = self.text % fields_data
+            ret = text % fields_data
         else:
             fields_data = fields_data[0]
-            ret = self.text % fields_data
+            ret = text % fields_data
         return ret
