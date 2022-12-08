@@ -19,7 +19,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           sudo apt-get update -y
-          sudo apt-get install -r ./requirements.txt
-      - name: Generate tables
+          pip install -r ./requirements.txt
+      - name: Generate and publish tables
         run:
-          ./generate-tables.sh
+          ./deploy.sh
