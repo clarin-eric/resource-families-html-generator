@@ -1,14 +1,36 @@
-class Tag:
-    '''
-    Class for tags in the tag tree. Note, that tags enclosed by <tbody> in order to allow multiple rows generation without repeating headers are created using RowTag, not this class. 
-    
-    Args:
-        tag_dict: JSON dict
-    '''
+from pandas import DataFrame, Series
+from typing import List, Set
 
-    def __init__(self, tag_dict):
-        keys = tag_dict.keys()
-        
+
+from utils import EmptyColumnError
+
+
+class Tag:
+    """
+    Class for instancing tags in the tag tree outside <tbody>.
+    :ivar tag: tag string, eg. <h1>
+    :ivar end_tag: end tag string e.g. </h1>
+    :ivar text: tag content with variable placeholders (%s)
+    :ivar on_next: separator/connector tag if tag repeated, e.g. <br> in <p>foo</p><br><p>bar</p>
+
+
+    note:: tags enclosed by <tbody> in order to allow multiple rows generation without repeating headers are created using RowTag, not this class.
+    """
+    def __init__(self, tag_dict: dict):
+        """
+        Constructor for Tag instance
+
+        :param tag_dict: JSON representation of tag rules (each line in rules.json specifies separate tag_dict,
+                     tags can be nested)
+        :type tag_dict: dict
+        """
+        self.tag: str
+        self.end_tag: str
+        self.text: str
+        self.on_next: str
+
+        keys: Set[str] = set(tag_dict)
+
         if 'tag' in keys:
             self.tag = tag_dict['tag']
             end_tag = self.tag.split(' ')[0]
@@ -20,7 +42,8 @@ class Tag:
             self.end_tag = ''
        
         if 'tags' in keys:
-            # in order to allow repeatition of row generation, all tags within <tbody> ... </tbody> are instances of RowTag, not Tag 
+            # In order to allow repeatition of row generation, all tags within <tbody> ... </tbody>
+            # are instances of RowTag, not Tag
             if self.tag == '<tbody>':
                 self.tags = [RowTag(tag) for tag in tag_dict['tags']]
             else:
@@ -38,48 +61,67 @@ class Tag:
         else:
             self.on_next = ''
     
-    def generate(self, stack, data_frame):
-        '''
-        Args:
-            stack: [], a stack of strings in form of </tag> for tag enclosing
-            data_frame: pandas.DataFrame to be passed in depth to the tree till it hits <tbody> tag
+    def generate(self, data_frame: DataFrame, stack: List) -> str:
+        """
+        Recursively generate tag tree
 
-        Returns:
-            string, generated html of a tag with its children
-        '''
+        :param data_frame: pandas DataFrame representing .csv content
+        :type data_frame: pandas.DataFrame
+        :param stack: List instance interpreted as tag stack for keeping track of unclosed tags
+        :type: List
+
+        :return: String representation of HTML tagtree
+        :rtype: str
+        """
+        ret: str = ''
         intend = len(stack) * '\t'
         # <tbody> tag marks beginning of row tags 
         if self.tag == '<tbody>':
-            ret = ''
             # create table row for every data row in csv file
             for _, data_row in data_frame.iterrows():
                 ret += intend + self.tag + self.text + '\n'
                 stack.append(self.end_tag)
                 for tag in self.tags:
-                    ret += tag.generate(stack, data_row)
+                    ret += tag.generate(data_row, stack)
                 end_tag = stack.pop()
                 ret += intend + end_tag + '\n'
-            return ret
         else:
             ret = intend + self.tag + self.text + '\n'
             stack.append(self.end_tag)
             for tag in self.tags:
-                ret += tag.generate(stack, data_frame)
+                ret += tag.generate(data_frame, stack)
             end_tag = stack.pop()
             ret += intend + end_tag + '\n'
-            return ret
+        return ret
 
 
 class RowTag:
-    '''
-    Class for tags in tag tree enclosed by <tbody>
+    """
+    Class for instancing tags in the tag tree within <tbody>
 
-    Args:
-        tag_dict: JSON dict
-    '''
+    :ivar tag: tag string, eg. <h1>
+    :ivar end_tag: end tag string e.g. </h1>
+    :ivar text: tag content with variable placeholders (%s)
+    :ivar on_next: separator/connector tag if tag repeated, e.g. <br> in <p>foo</p><br><p>bar</p>
+
+    note:: RowTag is used for generation tags enclosed by <tbody> in order to allow multiple rows generation
+           without repeating headers
+    """
 
     def __init__(self, tag_dict):
-        keys = tag_dict.keys()
+        """
+        Constructor for RowTag instance
+
+        :param tag_dict: JSON representation of tag rules, (each line in rules.json specifies separate tag_dict,
+                         row tags can be nested
+        :type tag_dict: dict
+        """
+        self.tag: str
+        self.end_tag: str
+        self.text: str
+        self.on_next: str
+
+        keys: Set = set(tag_dict)
         self.tag = tag_dict['tag']
 
         end_tag = self.tag.split(' ')[0]
@@ -107,13 +149,24 @@ class RowTag:
         else:
             self.fields = []
 
-    def generate(self, stack, data_row):
+    def generate(self, data_row: Series, stack: list) -> str:
+        """
+        Recursively generate tag tree
+
+        :param data_row: pandas Series representing .csv record data
+        :type data_row: pandas.Series
+        :param stack: List instance interpreted as tag stack for keeping track of unclosed tags
+        :type stack: List
+
+        :return: String representation of HTML tagtree
+        :rtype: str
+        """
         intend = len(stack) * '\t'
         ret = intend + self.tag + self.text + '\n'
         stack.append(self.end_tag)
 
         for tag in self.tags:
-            ret += tag.generate(stack, data_row)
+            ret += tag.generate(data_row, stack)
 
         if len(self.fields) > 1 and self.on_next != '':
             for field in self.fields:
@@ -131,43 +184,110 @@ class RowTag:
 
 
 class Clartable(Tag):
-    '''
+    """
     Seed of a tag tree
-    
-    Args:
-        tag: JSON dict with table rules
-    '''
-    def __init__(self, tag):
-        super().__init__(tag)
-        self.tag_stack = []
 
-    def generate(self, data_frame):
-        ret = ''
+    :ivar tag_stack: stack keeping track of opened tags
+    """
+    def __init__(self, tag_dict):
+        """
+        Constructor for Clartable instance
+
+        :param tag_dict: JSON representation of tag rules
+        :type tag_dict: dict
+        """
+        super().__init__(tag_dict)
+        # Stack for tracking opened tags
+        self.tag_stack: list = []
+
+    def generate(self, data_frame: DataFrame, stack: list = None) -> str:
+        """
+        Recursively generate tag tree
+
+        :param data_frame: pandas DataFrame representing .csv record data
+        :type data_row: pandas.DataFrame
+        :param stack: List instance interpreted as tag stack for keeping track of unclosed tags
+        :type stack: List
+
+        :return: String representation of HTML tagtree
+        :rtype: str
+        """
+        ret: str = ''
+        stack = self.tag_stack
         for tag in self.tags:
-            ret += tag.generate(self.tag_stack, data_frame)
+            ret += tag.generate(data_frame, stack)
         return ret
 
+
 class Field:
-    '''
-    Fields are parts of the table which require data from .csv file, but stores text, e.g. "<strong>Size: </strong>%s"
-    '''
-    def __init__(self, field_dict):
+    """
+    Fields are content of cells of HTML table which require data from .csv file, storing str with placeholders for data,
+    e.g. "<strong>Size: </strong>%s"
+
+    :ivar columns: list of column names containing data for the field
+    :ivar ifempty: alternative rules for fields with empty data source
+    :ivar optional: boolean, whether to ommit data field if data empty
+    :ivar sep: separator placeholder, in default rules.json is set to '#SEP'
+    :ivar text: string with variable placeholders
+
+    """
+    def __init__(self, field_dict: dict):
+        """
+        Constructor for Field instance
+
+        :param field_dict: dictionary with Field creation rules
+        :type field_dict: dict
+        """
+        self.columns: Set[str]
+        self.optional: bool
+        self.ifempty: dict
+        self.sep: str
+        self.text: str
+
         self.optional = field_dict['optional']
         self.text = field_dict['text']
         self.columns = field_dict['columns']
         if 'sep' in field_dict.keys():
             self.sep = field_dict['sep']
         else:
-            self.sep = None 
+            self.sep = None
 
-    def generate(self, data_row):
+        if 'ifempty' in field_dict.keys():
+            self.ifempty = field_dict["ifempty"]
+        else:
+            self.ifempty = {}
+
+    def generate(self, data_row: Series) -> str:
+        """
+        Generate Field (a cell) in the table
+
+        :param data_row: pandas Series representing .csv record data
+        :type data_row: pandas.Series
+        :param stack: List instance interpreted as tag stack for keeping track of unclosed tags
+        :type stack: List
+
+        :return: String representation of HTML table cell
+        :rtype: str
+        """
+        ret: str
+        text: str = self.text
         fields_data = [data_row[column] for column in self.columns]
-        if self.optional:
-            for field_data in fields_data:
-                if field_data == '':
-                    return ''
-        if self.sep:
-            split_lists = [[] for i in range(len(self.columns))]
+
+        ret = ''
+        # Check if data fields empty
+        if not all([field_data == '' for field_data in fields_data]):
+            empty_columns = {column for column in self.columns if data_row[column] == ''}
+            # Check if rule exists
+            if empty_columns and not self.optional and (not self.ifempty and all(set(ie["columns"]) for ie in self.ifempty) != empty_columns):
+                raise EmptyColumnError(empty_columns)
+            else:
+                for ie in self.ifempty:
+                    if set(ie["columns"]) == empty_columns:
+                        text = ie["text"]
+                        break
+        elif self.sep:
+            ret = ''
+            split_lists = [[] for _ in range(len(self.columns))]
             for i, field_data in enumerate(fields_data):
                 field_data_split = field_data.split(self.sep)
                 if isinstance(field_data_split, list):
@@ -176,7 +296,6 @@ class Field:
                     split_lists[i].append(field_data_split)
 
             data = list(zip(*split_lists))
-            ret = ''
             for fields_data in data:
                 tmp = fields_data
                 #TODO find a way to remove hardcoded button icons
@@ -185,17 +304,13 @@ class Field:
                         tmp = fields_data[:1] + ('fa fa-arrow-circle-o-down',) + fields_data[1:]
                     else:
                         tmp = fields_data[:1] + ('fa fa-search',) + fields_data[1:]
-                ret += self.text % tmp 
+                ret += text % tmp
                 ret += '\n'
-            return ret
 
         elif len(fields_data) > 1:
             fields_data = tuple(fields_data)
+            ret = text % fields_data
         else:
             fields_data = fields_data[0]
-
-        return self.text % fields_data
-
-    @property
-    def otpional(self):
-        return self.optional
+            ret = text % fields_data
+        return ret
