@@ -1,8 +1,5 @@
 #!/bin/bash
 
-git config user.name "GITACTIONS CI"
-git config user.email "$COMMIT_AUTHOR_EMAIL"
-
 # set -e
 
 # generate tables
@@ -14,6 +11,8 @@ echo Tables generated
 # deploy
 cd tables
 git init
+git config user.name "GITACTIONS CI"
+git config user.email "$COMMIT_AUTHOR_EMAIL"
 git add .
 git commit -m "Deploy tables"
 git push --force https://${GITHUB_TOKEN}:x-oauth-basic@github.com/clarin-eric/resource-families-html-generator.git HEAD:gh-pages
