@@ -9,7 +9,7 @@ git config user.email "$COMMIT_AUTHOR_EMAIL"
 mkdir tables || true
 bash ./generate-tables.sh
 
-if [ -z "$GITHUB.BASE_REF" ] || [ "$GIHUB.REF_NAME" != "master" ]; then exit 0; fi
+if [ -z "$GITHUB.BASE_REF" ] || [ "$GIHUB.REF_NAME" != "ifdatafieldempty" ]; then exit 0; fi
 echo Tables generated
 # deploy
 cd tables
