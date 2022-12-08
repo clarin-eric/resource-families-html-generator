@@ -1,6 +1,6 @@
 #/bin/bash
 
-# set -e
+set -e
 
 # process Corpora
 for D in ./resource_families/Corpora/*/; do 
