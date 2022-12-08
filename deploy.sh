@@ -1,15 +1,15 @@
 #!/bin/bash
 
-git config user.name "Travis CI"
+git config user.name "GITACTIONS CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
-set -e
+# set -e
 
 # generate tables
 mkdir tables || true
 bash ./generate-tables.sh
 
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "master" ]; then exit 0; fi
+if [ "$GITHUB.BASE_REF" != "false" -o "$GIHUB.REF_NAME" != "master" ]; then exit 0; fi
 echo Tables generated
 # deploy
 cd tables
