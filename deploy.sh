@@ -15,4 +15,4 @@ git config user.name "GITACTIONS CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 git add .
 git commit -m "Deploy tables"
-git push --force https://${GITHUB_TOKEN}:x-oauth-basic@github.com/clarin-eric/resource-families-html-generator.git HEAD:gh-pages
+git push --force https://${GITHUB_PAT_RESOURCE_FAMILIES}:x-oauth-basic@github.com/clarin-eric/resource-families-html-generator.git HEAD:gh-pages
