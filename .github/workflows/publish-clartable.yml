@@ -8,7 +8,7 @@ defaults:
 
 jobs:
   generate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
@@ -20,6 +20,12 @@ jobs:
           python -m pip install --upgrade pip
           sudo apt-get update -y
           pip install -r ./requirements.txt
-      - name: Generate and publish tables
-        run:
-          ./deploy.sh
+      - name: Generate tables
+        run: |
+          mkdir tables || true
+          ./generate-tables.sh
+          echo "Tables generated"
+      - name: Deploy tables to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4 # https://github.com/JamesIves/github-pages-deploy-action
+        with:
+          folder: tables
