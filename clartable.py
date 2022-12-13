@@ -280,13 +280,12 @@ class Field:
             # Check if rule exists
             if empty_columns and not self.optional and (not self.ifempty and all(set(ie["columns"]) for ie in self.ifempty) != empty_columns):
                 raise EmptyColumnError(empty_columns)
-            else:
+            elif not self.optional:
                 for ie in self.ifempty:
                     if set(ie["columns"]) == empty_columns:
                         text = ie["text"]
                         break
-        elif self.sep:
-            ret = ''
+        if self.sep:
             split_lists = [[] for _ in range(len(self.columns))]
             for i, field_data in enumerate(fields_data):
                 field_data_split = field_data.split(self.sep)
