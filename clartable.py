@@ -1,5 +1,5 @@
 from pandas import DataFrame, Series
-from typing import List, Set
+from typing import List, Set, Tuple
 
 
 from utils import EmptyColumnError
@@ -271,20 +271,23 @@ class Field:
         """
         ret: str
         text: str = self.text
+
         fields_data = [data_row[column] for column in self.columns]
 
         ret = ''
         # Check if data fields empty
-        if not all([field_data == '' for field_data in fields_data]):
-            empty_columns = {column for column in self.columns if data_row[column] == ''}
+        if any([field_data == '' for field_data in fields_data]):
+            empty_columns: set = {column for column in self.columns if data_row[column] == ''}
             # Check if rule exists
             if empty_columns and not self.optional and (not self.ifempty and all(set(ie["columns"]) for ie in self.ifempty) != empty_columns):
                 raise EmptyColumnError(empty_columns)
-            elif not self.optional:
-                for ie in self.ifempty:
-                    if set(ie["columns"]) == empty_columns:
-                        text = ie["text"]
-                        break
+            if self.optional:
+                text = ''
+            for ie in self.ifempty:
+                if set(ie["columns"]) == empty_columns:
+                    text = ie["text"]
+                    break
+        fields_data = [field_data for field_data in fields_data if field_data != '']
         if self.sep:
             split_lists = [[] for _ in range(len(self.columns))]
             for i, field_data in enumerate(fields_data):
@@ -296,20 +299,22 @@ class Field:
 
             data = list(zip(*split_lists))
             for fields_data in data:
-                tmp = fields_data
-                #TODO find a way to remove hardcoded button icons
+                # stores non-empty data fields
+                tmp: Tuple = tuple(fields_data)
+                #TODO find a way to remove hardcoded buttstron icons
                 if 'Buttons' in self.columns:
                     if 'Download' in fields_data:
                         tmp = fields_data[:1] + ('fa fa-arrow-circle-o-down',) + fields_data[1:]
                     else:
                         tmp = fields_data[:1] + ('fa fa-search',) + fields_data[1:]
+                tmp = tuple(field_data for field_data in tmp if field_data != '')
                 ret += text % tmp
                 ret += '\n'
 
         elif len(fields_data) > 1:
             fields_data = tuple(fields_data)
             ret = text % fields_data
-        else:
+        elif fields_data:
             fields_data = fields_data[0]
             ret = text % fields_data
         return ret
