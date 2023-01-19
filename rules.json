@@ -18,16 +18,22 @@
 						{"text": "<strong>Annotation: </strong>%s", "optional": true, "columns": ["Annotation"]},
 						{"text": "<strong>Licence: </strong><a href=\"%s\">%s</a>", "optional": true, "columns": ["Licence_URL", "Licence"],
 							"ifempty": [
+								{"columns": ["Licence_URL", "Licence"], "text": "<strong>Licence: </strong>%s"},
 								{"columns": ["Licence_URL"], "text": "<strong>Licence: </strong>%s"}
+
 							]}
 					]}
 				]},
-				{"tag": "<td valign=\"top\">", "fields":[
+				{"tag": "<td valign=\"top\">", "fields": [
 					{"text": "%s", "optional": false, "columns": ["Language"]}
 				]},
-				{"tag": "<td valign=\"top\">", "fields":[
+				{"tag": "<td valign=\"top\">", "fields": [
 					{"text": "<p>%s</p>", "optional": false, "sep": "#SEP", "columns": ["Description"]},
-					{"text": "<p>For the relevant publication, see <a href=\"%s\">%s</a></p>", "optional": true, "columns": ["Publication_URL", "Publication"]}
+					{"text": "<p>For the relevant publication, see <a href=\"%s\">%s</a></p>", "optional": true, "columns": ["Publication_URL", "Publication"],
+						"ifempty": [
+							{"columns": ["Publication_URL"], "text": "<strong>For the relevant publication, see %s"}
+						]
+					}
 					
 				]},
 				{"tag": "<td valign=\"top\">", "fields":[

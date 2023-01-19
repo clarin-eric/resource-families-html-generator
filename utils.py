@@ -50,5 +50,5 @@ class EmptyColumnError(Exception):
     :type column_set: Set[str]
     """
     def __init__(self, column_set: Set[str]):
-        self.message = f"These columns: {column_set} are empty without fallback <ifempty> rule defined."
+        self.message = f"These non-optional columns: {column_set} are empty without fallback <ifempty> rule defined."
         super().__init__(self.message)
