@@ -19,3 +19,4 @@ done
 ./run.py -i ./resource_families/Tools/"Normalization" -o ./resource_families/Tools/"Normalization" -r ./rules_norm.json
 ./run.py -i ./resource_families/Tools/"Part-of-speech tagging and lemmatization" -o ./resource_families/Tools/"Part-of-speech tagging and lemmatization" -r ./rules_pos.json
 ./run.py -i ./resource_families/Tools/"Tools for sentiment analysis" -o ./resource_families/Tools/"Tools for sentiment analysis" -r ./rules_senti.json
+./run.py -i ./resource_families/Tools/"Corpus query tools" -o ./resource_families/Tools/"Corpus query tools" -r ./rules_query.json
