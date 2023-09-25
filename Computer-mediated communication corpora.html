@@ -16,6 +16,51 @@
 		<tr>
 			<td valign="top">
 				<p>
+					<a href="http://hdl.handle.net/11356/1804">Web corpus MaCoCu</a>
+				</p>
+				<p>
+					<strong>Size: </strong>Albanian (625 million words)#SEPBosnian (730 million words)#SEPBulgarian (3.5 billion words)#SEPCatalan (1.7 billion words)#SEPCroatian (2.4 billion words)#SEPModern Greek (4.4 billion words)#SEPIcelandic (887 million words)#SEPMacedonian (524 million words)#SEPMaltese (347 million words)#SEPMontenegrin (161 million words)#SEPSerbian (2.5 billion words)#SEPSlovenian (1.9 billion words)#SEPTurkish (4.3 billion words)#SEPUkrainian (6.2 billion words)
+					<br>
+					<strong>Annotation: </strong>annotated with extensive metadata
+					<br>
+					<strong>Licence: </strong>CC0-No Rights Reserved
+				</p>
+			</td>
+			<td valign="top">
+				Albanian, Bosnian, Bulgarian, Catalan, Croatian, Modern Greek, Icelandic, Macedonian, Maltese, Montenegrin, Serbian, Slovenian, Turkish, Ukrainian
+			</td>
+			<td valign="top">
+				<p>These corpora are a collection containing web texts and were built by crawling national internet top-level domains (specified below) and by extending the crawl dynamically to other domains as well. The crawler is available at <a href="https://github.com/macocu/MaCoCu-crawler">MaCoCu GitHub channel</a>. Considerable effort was devoted into cleaning the extracted text to provide a high-quality web corpus. This was achieved by removing <a href="https://corpus.tools/wiki/Justext">boilerplate</a> and <a href="https://corpus.tools/wiki/Onion">near-duplicated paragraphs</a>, discarding very short texts as well as texts that are not in the target language. Furthermore, samples from the largest 1,500 domains were manually checked and bad domains, such as machine-translated domains, were removed.</p>
+<p>The dataset is characterized by extensive metadata which allows filtering the dataset based on text quality and <a href="https://github.com/bitextor/monotextor">other criteria</a>, making the corpus highly useful for corpus linguistics studies, as well as for training language models and other language technologies. In XML format, each document is accompanied by the following metadata: title, crawl date, url, domain, file type of the original document, distribution of languages inside the document, and a fluency score based on a language model. The text of each document is divided into paragraphs that are accompanied by metadata on the information whether a paragraph is a heading or not, metadata on the paragraph quality (labels, such as “short” or “good”, assigned based on paragraph length, URL and stopword density via the <a href="https://corpus.tools/wiki/Justext">jusText tool</a>) and fluency (score between 0 and 1, assigned with the <a href="https://github.com/bitextor/monocleaner">Monocleaner tool</a>), the automatically identified language of the text in the paragraph, and information whether the paragraph contains sensitive information (identified via the <a href="https://github.com/bitextor/biroamer">Biroamer tool</a>). As opposed to the previous version in the case of corpora in version 2.0, this version has more accurate metadata on languages of the texts, which was achieved by using <a href="https://github.com/CLD2Owners/cld2">Google's Compact Language Detector 2 (CLD2)</a>, a high-performance language detector supporting many languages. Other tools, used for web corpora creation and curation, have been updated as well, resulting in an even cleaner, as well as larger corpus.</p>
+<p> The ALBANIAN web corpus MaCoCu-sq 1.0 was built by crawling the ".al" internet top-level domain in 2022. The BOSNIAN web corpus MaCoCu-bs 1.0 was built by crawling the ".ba" internet top-level domain in 2021 and 2022. The BULGARIAN web corpus MaCoCu-bg 2.0 was built by crawling the ".bg" and ".бг" internet top-level domains in 2021. The CATALAN web corpus MaCoCu-ca 1.0 was built by crawling the ".cat", ".es", ".ad", ".fr", ".it" and ".eu" internet top-level domains in 2022. The CROATIAN web corpus MaCoCu-hr 2.0 was built by crawling the ".hr" internet top-level domain in 2021 and 2022. The GREEK web corpus MaCoCu-el 1.0 was built by crawling the ".gr", ".ελ", ".cy" and ".eu" internet top-level domains in 2023. The ICELANDIC web corpus MaCoCu-is 2.0 was built by crawling the ".is" internet top-level domain in 2021 and 2023. The MACEDONIAN web corpus MaCoCu-mk 2.0 was built by crawling the ".mk" and ".мкд" internet top-level domains in 2021. The MALTESE web corpus MaCoCu-mt 2.0 was built by crawling the ".mt" internet top-level domain in 2021. The MONTENEGRIN web corpus MaCoCu-cnr 1.0 was built by crawling the ".me" internet top-level domain in 2021 and 2022. The SERBIAN web corpus MaCoCu-sr 1.0 was built by crawling the ".rs" and ".срб" internet top-level domains in 2021 and 2022. The SLOVENIAN web corpus MaCoCu-sl 2.0 was built by crawling the ".si" internet top-level domain in 2021 and 2022. The TURKISH web corpus MaCoCu-tr 2.0 was built by crawling the ".tr" and ".cy" internet top-level domains in 2021. The UKRAINIAN web corpus MaCoCu-uk 1.0 was built by crawling the ".ua" and ".укр" internet top-level domains in 2022.</p>
+<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be easily read with the <a href="https://pypi.org/project/prevert/">prevert parser</a>.</p>
+
+				<p>For the relevant publication, see <a href="https://hdl.handle.net/11370/685514a8-947e-44f9-83cf-90356c5f1684">Bañón et al. (2022)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1804"><span class="fa fa-search"></span>Download (Albanian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1808"><span class="fa fa-search"></span>Download (Bosnian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1800"><span class="fa fa-search"></span>Download (Bulgarian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1837"><span class="fa fa-search"></span>Download (Catalan)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1806"><span class="fa fa-search"></span>Download (Croatian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1839"><span class="fa fa-search"></span>Download (Modern Greek)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1805"><span class="fa fa-search"></span>Download (Icelandic)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1801"><span class="fa fa-search"></span>Download (Macedonian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1803"><span class="fa fa-search"></span>Download (Maltese)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1809"><span class="fa fa-search"></span>Download (Montenegrin)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1807"><span class="fa fa-search"></span>Download (Serbian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1795"><span class="fa fa-search"></span>Download (Slovenian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1802"><span class="fa fa-search"></span>Download (Turkish)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1838"><span class="fa fa-search"></span>Download (Ukrainian)</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
 					<a href="http://hdl.handle.net/11858/00-097C-0000-000E-011B-8">Corpus of contemporary blogs</a>
 				</p>
 				<p>
@@ -221,6 +266,37 @@
 		<tr>
 			<td valign="top">
 				<p>
+					<a href="http://urn.fi/urn:nbn:fi:lb-2017021506">Suomi 24 Corpus</a>
+				</p>
+				<p>
+					<strong>Size: </strong>2.6 billion tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, MSD-tagged
+					<br>
+					<strong>Licence: </strong>CLARIN ACA
+				</p>
+			</td>
+			<td valign="top">
+				Finnish
+			</td>
+			<td valign="top">
+				<p>This corpus contains forum posts from the Suomi24 website from 2001 to 2016.</p>
+<p>The corpus is available for download from the FIN-CLARIN repository and through the concordancer Korp.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://korp.csc.fi/#?corpus=suomi24&cqp=[]"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2017021502"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
 					<a href="http://urn.fi/urn:nbn:fi:lb-2014052718">The HS.fi News and Comments Corpus</a>
 				</p>
 				<p>
@@ -244,37 +320,6 @@
 			<td valign="top">
 				<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2015050503"><span class="fa fa-search"></span>Concordancer</a></p>
 <p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2014052718"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
-
-				
-			</td>
-		</tr>
-	</tbody>
-	<tbody>
-		<tr>
-			<td valign="top">
-				<p>
-					<a href="http://urn.fi/urn:nbn:fi:lb-2017021506">Suomi 24 Corpus</a>
-				</p>
-				<p>
-					<strong>Size: </strong>2.6 billion tokens
-					<br>
-					<strong>Annotation: </strong>tokenised, MSD-tagged
-					<br>
-					<strong>Licence: </strong>CLARIN ACA
-				</p>
-			</td>
-			<td valign="top">
-				Finnish
-			</td>
-			<td valign="top">
-				<p>This corpus contains forum posts from the Suomi24 website from 2001 to 2016.</p>
-<p>The corpus is available for download from the FIN-CLARIN repository and through the concordancer Korp.</p>
-
-				
-			</td>
-			<td valign="top">
-				<p><a class="btn btn-primary text-nowrap" href="http://korp.csc.fi/#?corpus=suomi24&cqp=[]"><span class="fa fa-search"></span>Concordancer</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2017021502"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
 
 				
 			</td>
@@ -458,6 +503,39 @@
 		<tr>
 			<td valign="top">
 				<p>
+					<a href="http://hdl.handle.net/11356/1752">Serbian Web Corpus PDRS 1.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>715 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, MSD-tagged (MULTEXT-East & UD), lemmatised, annotated for text source
+					<br>
+					<strong>Licence: </strong>CC BY
+				</p>
+			</td>
+			<td valign="top">
+				Serbian
+			</td>
+			<td valign="top">
+				<p>This corpus contains texts from the web obtained by crawling the .rs domain. Crawling has been done in September and October 2022 with BootCat. As search terms, appr. 2,800 word forms with a frequency between 5,000 and 500,000 in srWaC have been used. The texts are deduplicated, cyrillic texts have been transliterated into the Latin alphabet. The linguistic processing was done with the <a href="https://github.com/clarinsi/classla">CLASSLA package</a> for tokenization, lemmatization and morpho-syntactic tagging (both MULTEXT-East and Universal Dependencies).</p>
+<p>In addition, some 80% of the URLs are manually tagged for 10 different types of sources ("area"): media (media outlets with several posts daily), inform (topic-centered sites with infrequent posts - maximum 3 per day), company (presentations of companies), state (websites of government bodies on nationa, regional and local level), forum (forum posts), portal (topic-centered portals without daily coverage), science (scientific publications), shop (with descriptions of products), database (knowledge bases, dictionaries, databases and similar) and community (NGOs, fan clubs, associations and other). The corpus is distributed in the CoNLL-U format in batches of appr. 2x50 mio. tokens.</p>
+<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be queried through noSketchEngine and KonText concordancers.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/ske/#dashboard?corpname=pdrs10"><span class="fa fa-search"></span>Concordancer (noSketchEngine)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/query?corpname=pdrs10"><span class="fa fa-search"></span>Concordancer(KonText)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1752"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
 					<a href="http://hdl.handle.net/11356/1138">Blog post and comment corpus Janes-Blog 1.0</a>
 				</p>
 				<p>
@@ -511,6 +589,36 @@
 			<td valign="top">
 				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=janes_forum"><span class="fa fa-search"></span>Concordancer</a></p>
 <p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1139"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1782">Monitor corpus of Slovene Trendi 2023-02</a>
+				</p>
+				<p>
+					<strong>Size: </strong>700 million tokens
+					<br>
+					<strong>Annotation: </strong>PoS-tagged, lemmatised, syntactically parsed, annotated for named entities and topics
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This corpus contains news from 107 different media websites, published by 72 different publishers, and is a monitor corpus of Slovene. Trendi 2023-02 covers the period from January 2019 to February 2023, complementing the <a href="http://hdl.handle.net/11356/1320">Gigafida 2.0</a> reference corpus of written Slovene. All the contents of the Trendi corpus are at the moment obtained using the <a href=" http://newsfeed.ijs.si/">Jožef Stefan Institute Newsfeed service</a>. The texts have been annotated using the <a href="https://github.com/clarinsi/classla">CLASSLA-Stanza pipeline</a>, including syntactic parsing according to the <a href="https://universaldependencies.org/sl/">Universal Dependencies</a> and <a href="https://nl.ijs.si/janes/wp-content/uploads/2017/09/SlovenianNER-eng-v1.1.pdf">Named Entities</a>.</p>
+<p>An important addition are topics or thematical categories, which have been automatically assigned to each text. There are 13 categories altogether: Arts and culture, Crime and accidents, Economy, Environment, Health, Leisure, Politics and Law, Science and Technology, Society, Sports, Weather, Entertainment, and Education. Text classification models are available at <a href="http://hdl.handle.net/11356/1709">Text classification model SloBERTa-Trendi-Topics 1.0</a>, <a href="http://hdl.handle.net/11356/1710">Text classification model fastText-Trendi-Topics 1.0</a>, and <a href="https://huggingface.co/cjvt/sloberta-trendi-topics">SloBERTa model</a>. At the moment, the corpus is not available as a dataset due to copyright restrictions but we hope to make at least some of it available in the near future.</p>
+<p>The corpus can be queried through noSketchEngine and KonText concordancers.</p>
+
+				<p>For the relevant publication, see <a href="https://euralex.org/wp-content/themes/euralex/proceedings/Euralex%202022/EURALEX2022_Pr_p230-239_Kosem.pdf#SEPhttps://nl.ijs.si/jtdh22/pdf/JTDH2022_Kosem-et-al_Spremljevalni-korpus-Trendi.pdf">Kosem (2022)#SEPKosem et al. (2022)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/ske/#dashboard?corpname=trendi"><span class="fa fa-search"></span>Concordancer (noSketchEngine)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/query?corpname=trendi"><span class="fa fa-search"></span>Concordancer(KonText)</a></p>
 
 				
 			</td>
@@ -604,114 +712,6 @@
 			<td valign="top">
 				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=janes_wiki"><span class="fa fa-search"></span>Concordancer</a></p>
 <p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1137"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
-
-				
-			</td>
-		</tr>
-	</tbody>
-	<tbody>
-		<tr>
-			<td valign="top">
-				<p>
-					<a href="http://hdl.handle.net/11356/1752">Serbian Web Corpus PDRS 1.0</a>
-				</p>
-				<p>
-					<strong>Size: </strong>715 million tokens
-					<br>
-					<strong>Annotation: </strong>tokenised, MSD-tagged (MULTEXT-East & UD), lemmatised, annotated for text source
-					<br>
-					<strong>Licence: </strong>CC BY
-				</p>
-			</td>
-			<td valign="top">
-				Serbian
-			</td>
-			<td valign="top">
-				<p>This corpus contains texts from the web obtained by crawling the .rs domain. Crawling has been done in September and October 2022 with BootCat. As search terms, appr. 2,800 word forms with a frequency between 5,000 and 500,000 in srWaC have been used. The texts are deduplicated, cyrillic texts have been transliterated into the Latin alphabet. The linguistic processing was done with the <a href="https://github.com/clarinsi/classla">CLASSLA package</a> for tokenization, lemmatization and morpho-syntactic tagging (both MULTEXT-East and Universal Dependencies).</p>
-<p>In addition, some 80% of the URLs are manually tagged for 10 different types of sources ("area"): media (media outlets with several posts daily), inform (topic-centered sites with infrequent posts - maximum 3 per day), company (presentations of companies), state (websites of government bodies on nationa, regional and local level), forum (forum posts), portal (topic-centered portals without daily coverage), science (scientific publications), shop (with descriptions of products), database (knowledge bases, dictionaries, databases and similar) and community (NGOs, fan clubs, associations and other). The corpus is distributed in the CoNLL-U format in batches of appr. 2x50 mio. tokens.</p>
-<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be queried through noSketchEngine and KonText concordancers.</p>
-
-				
-			</td>
-			<td valign="top">
-				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/ske/#dashboard?corpname=pdrs10"><span class="fa fa-search"></span>Concordancer (noSketchEngine)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/query?corpname=pdrs10"><span class="fa fa-search"></span>Concordancer(KonText)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1752"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
-
-				
-			</td>
-		</tr>
-	</tbody>
-	<tbody>
-		<tr>
-			<td valign="top">
-				<p>
-					<a href="http://hdl.handle.net/11356/1782">Monitor corpus of Slovene Trendi 2023-02</a>
-				</p>
-				<p>
-					<strong>Size: </strong>700 million tokens
-					<br>
-					<strong>Annotation: </strong>PoS-tagged, lemmatised, syntactically parsed, annotated for named entities and topics
-				</p>
-			</td>
-			<td valign="top">
-				Slovenian
-			</td>
-			<td valign="top">
-				<p>This corpus contains news from 107 different media websites, published by 72 different publishers, and is a monitor corpus of Slovene. Trendi 2023-02 covers the period from January 2019 to February 2023, complementing the <a href="http://hdl.handle.net/11356/1320">Gigafida 2.0</a> reference corpus of written Slovene. All the contents of the Trendi corpus are at the moment obtained using the <a href=" http://newsfeed.ijs.si/">Jožef Stefan Institute Newsfeed service</a>. The texts have been annotated using the <a href="https://github.com/clarinsi/classla">CLASSLA-Stanza pipeline</a>, including syntactic parsing according to the <a href="https://universaldependencies.org/sl/">Universal Dependencies</a> and <a href="https://nl.ijs.si/janes/wp-content/uploads/2017/09/SlovenianNER-eng-v1.1.pdf">Named Entities</a>.</p>
-<p>An important addition are topics or thematical categories, which have been automatically assigned to each text. There are 13 categories altogether: Arts and culture, Crime and accidents, Economy, Environment, Health, Leisure, Politics and Law, Science and Technology, Society, Sports, Weather, Entertainment, and Education. Text classification models are available at <a href="http://hdl.handle.net/11356/1709">Text classification model SloBERTa-Trendi-Topics 1.0</a>, <a href="http://hdl.handle.net/11356/1710">Text classification model fastText-Trendi-Topics 1.0</a>, and <a href="https://huggingface.co/cjvt/sloberta-trendi-topics">SloBERTa model</a>. At the moment, the corpus is not available as a dataset due to copyright restrictions but we hope to make at least some of it available in the near future.</p>
-<p>The corpus can be queried through noSketchEngine and KonText concordancers.</p>
-
-				<p>For the relevant publication, see <a href="https://euralex.org/wp-content/themes/euralex/proceedings/Euralex%202022/EURALEX2022_Pr_p230-239_Kosem.pdf#SEPhttps://nl.ijs.si/jtdh22/pdf/JTDH2022_Kosem-et-al_Spremljevalni-korpus-Trendi.pdf">Kosem (2022)#SEPKosem et al. (2022)</a></p>
-			</td>
-			<td valign="top">
-				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/ske/#dashboard?corpname=trendi"><span class="fa fa-search"></span>Concordancer (noSketchEngine)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/query?corpname=trendi"><span class="fa fa-search"></span>Concordancer(KonText)</a></p>
-
-				
-			</td>
-		</tr>
-	</tbody>
-	<tbody>
-		<tr>
-			<td valign="top">
-				<p>
-					<a href="http://hdl.handle.net/11356/1804">Web corpus MaCoCu</a>
-				</p>
-				<p>
-					<strong>Size: </strong>Albanian (625 million words)#SEPBosnian (730 million words)#SEPBulgarian (3.5 billion words)#SEPCatalan (1.7 billion words)#SEPCroatian (2.4 billion words)#SEPModern Greek (4.4 billion words)#SEPIcelandic (887 million words)#SEPMacedonian (524 million words)#SEPMaltese (347 million words)#SEPMontenegrin (161 million words)#SEPSerbian (2.5 billion words)#SEPSlovenian (1.9 billion words)#SEPTurkish (4.3 billion words)#SEPUkrainian (6.2 billion words)
-					<br>
-					<strong>Annotation: </strong>annotated with extensive metadata
-					<br>
-					<strong>Licence: </strong>CC0-No Rights Reserved
-				</p>
-			</td>
-			<td valign="top">
-				Albanian, Bosnian, Bulgarian, Catalan, Croatian, Modern Greek, Icelandic, Macedonian, Maltese, Montenegrin, Serbian, Slovenian, Turkish, Ukrainian
-			</td>
-			<td valign="top">
-				<p>These corpora are a collection containing web texts and were built by crawling national internet top-level domains (specified below) and by extending the crawl dynamically to other domains as well. The crawler is available at <a href="https://github.com/macocu/MaCoCu-crawler">MaCoCu GitHub channel</a>. Considerable effort was devoted into cleaning the extracted text to provide a high-quality web corpus. This was achieved by removing <a href="https://corpus.tools/wiki/Justext">boilerplate</a> and <a href="https://corpus.tools/wiki/Onion">near-duplicated paragraphs</a>, discarding very short texts as well as texts that are not in the target language. Furthermore, samples from the largest 1,500 domains were manually checked and bad domains, such as machine-translated domains, were removed.</p>
-<p>The dataset is characterized by extensive metadata which allows filtering the dataset based on text quality and <a href="https://github.com/bitextor/monotextor">other criteria</a>, making the corpus highly useful for corpus linguistics studies, as well as for training language models and other language technologies. In XML format, each document is accompanied by the following metadata: title, crawl date, url, domain, file type of the original document, distribution of languages inside the document, and a fluency score based on a language model. The text of each document is divided into paragraphs that are accompanied by metadata on the information whether a paragraph is a heading or not, metadata on the paragraph quality (labels, such as “short” or “good”, assigned based on paragraph length, URL and stopword density via the <a href="https://corpus.tools/wiki/Justext">jusText tool</a>) and fluency (score between 0 and 1, assigned with the <a href="https://github.com/bitextor/monocleaner">Monocleaner tool</a>), the automatically identified language of the text in the paragraph, and information whether the paragraph contains sensitive information (identified via the <a href="https://github.com/bitextor/biroamer">Biroamer tool</a>). As opposed to the previous version in the case of corpora in version 2.0, this version has more accurate metadata on languages of the texts, which was achieved by using <a href="https://github.com/CLD2Owners/cld2">Google's Compact Language Detector 2 (CLD2)</a>, a high-performance language detector supporting many languages. Other tools, used for web corpora creation and curation, have been updated as well, resulting in an even cleaner, as well as larger corpus.</p>
-<p> The ALBANIAN web corpus MaCoCu-sq 1.0 was built by crawling the ".al" internet top-level domain in 2022. The BOSNIAN web corpus MaCoCu-bs 1.0 was built by crawling the ".ba" internet top-level domain in 2021 and 2022. The BULGARIAN web corpus MaCoCu-bg 2.0 was built by crawling the ".bg" and ".бг" internet top-level domains in 2021. The CATALAN web corpus MaCoCu-ca 1.0 was built by crawling the ".cat", ".es", ".ad", ".fr", ".it" and ".eu" internet top-level domains in 2022. The CROATIAN web corpus MaCoCu-hr 2.0 was built by crawling the ".hr" internet top-level domain in 2021 and 2022. The GREEK web corpus MaCoCu-el 1.0 was built by crawling the ".gr", ".ελ", ".cy" and ".eu" internet top-level domains in 2023. The ICELANDIC web corpus MaCoCu-is 2.0 was built by crawling the ".is" internet top-level domain in 2021 and 2023. The MACEDONIAN web corpus MaCoCu-mk 2.0 was built by crawling the ".mk" and ".мкд" internet top-level domains in 2021. The MALTESE web corpus MaCoCu-mt 2.0 was built by crawling the ".mt" internet top-level domain in 2021. The MONTENEGRIN web corpus MaCoCu-cnr 1.0 was built by crawling the ".me" internet top-level domain in 2021 and 2022. The SERBIAN web corpus MaCoCu-sr 1.0 was built by crawling the ".rs" and ".срб" internet top-level domains in 2021 and 2022. The SLOVENIAN web corpus MaCoCu-sl 2.0 was built by crawling the ".si" internet top-level domain in 2021 and 2022. The TURKISH web corpus MaCoCu-tr 2.0 was built by crawling the ".tr" and ".cy" internet top-level domains in 2021. The UKRAINIAN web corpus MaCoCu-uk 1.0 was built by crawling the ".ua" and ".укр" internet top-level domains in 2022.</p>
-<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be easily read with the <a href="https://pypi.org/project/prevert/">prevert parser</a>.</p>
-
-				<p>For the relevant publication, see <a href="https://hdl.handle.net/11370/685514a8-947e-44f9-83cf-90356c5f1684">Bañón et al. (2022)</a></p>
-			</td>
-			<td valign="top">
-				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1804"><span class="fa fa-search"></span>Download (Albanian)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1808"><span class="fa fa-search"></span>Download (Bosnian)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1800"><span class="fa fa-search"></span>Download (Bulgarian)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1837"><span class="fa fa-search"></span>Download (Catalan)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1806"><span class="fa fa-search"></span>Download (Croatian)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1839"><span class="fa fa-search"></span>Download (Modern Greek)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1805"><span class="fa fa-search"></span>Download (Icelandic)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1801"><span class="fa fa-search"></span>Download (Macedonian)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1803"><span class="fa fa-search"></span>Download (Maltese)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1809"><span class="fa fa-search"></span>Download (Montenegrin)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1807"><span class="fa fa-search"></span>Download (Serbian)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1795"><span class="fa fa-search"></span>Download (Slovenian)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1802"><span class="fa fa-search"></span>Download (Turkish)</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1838"><span class="fa fa-search"></span>Download (Ukrainian)</a></p>
 
 				
 			</td>
