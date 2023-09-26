@@ -2666,10 +2666,41 @@
 		<tr>
 			<td valign="top">
 				<p>
-					<a href="http://hdl.handle.net/11356/1170">Croatian Twitter training corpus ReLDI-NormTagNER-hr 2.0 </a>
+					<a href="http://hdl.handle.net/11356/1792">Croatian linguistic training corpus hr500k 2.0</a>
 				</p>
 				<p>
-					<strong>Size: </strong>89,000 tokens
+					<strong>Size: </strong>499,635 tokens
+					<br>
+					<strong>Annotation: </strong>a subset tagged for multi-word expressions and semantic roles
+					<br>
+					<strong>Licence: </strong>CC BY-SA 4.0
+				</p>
+			</td>
+			<td valign="top">
+				Croatian
+			</td>
+			<td valign="top">
+				<p>This training corpus contains about 500,000 tokens manually annotated on the levels of tokenisation, sentence segmentation, morphosyntactic tagging, lemmatisation and named entities. About half of the corpus is also manually annotated with syntactic dependencies. A subset of the syntactically annotated corpus is also annotated for multi-word expressions. Furthermore, about a fifth of the corpus is annotated with semantic role labels.</p>
+<p>The annotation formalisms followed in the hr500k corpus are (1) the <a href="https://nl.ijs.si/ME/V6/msd/">MULTEXT-East V6</a> morphosyntactic specifications for the Serbo-Croatian macro-language, (2) the <a href="http://universaldependencies.org/guidelines.html">UDv2 Guidelines</a>, (3) the <a href="https://nl.ijs.si/janes/wp-content/uploads/2017/09/SlovenianNER-eng-v1.1.pdf">Janes annotation guidelines for named entities</a>, (4) the <a href="https://parsemefr.lis-lab.fr/parseme-st-guidelines/1.3/">PARSEME guidelines for annotating multi-word expressions</a> and (4) the <a href="https://www.sdjt.si/wp/wp-content/uploads/2018/09/JTDH-2018_Gantar-et-al_Towards-Semantic-Role-Labeling-in-Slovene-and-Croatian.pdf">semantic role labelling annotation protocol for Slovenian and Croatian</a>.</p>
+<p>The corpus is available for download from the CLARIN.SI repository.</p>
+
+				<p>For the relevant publication, see <a href="http://www.lrec-conf.org/proceedings/lrec2016/summaries/340.html">Ljubešić et al. (2016)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1792"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1793">Croatian Twitter training corpus ReLDI-NormTagNER-hr 3.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>89,855 tokens
 					<br>
 					<strong>Annotation: </strong>word normalisation
 					<br>
@@ -2680,15 +2711,13 @@
 				Croatian
 			</td>
 			<td valign="top">
-				<p>This corpus contains Tweets. The corpus is morphosyntactically tagged following the <a href="http://nl.ijs.si/ME/V4/msd/html/index.html">MULTEXT-East Version 4 tagset</a>.</p>
-<p>The corpus is available through the concordancers KonText and noSketchEngine and for download from the CLARIN.SI repository.</p>
+				<p>This corpus contains manually annotated Croatian tweets. It is meant as a gold-standard training and testing dataset for tokenisation, sentence segmentation, word normalisation, morphosyntactic tagging, lemmatisation and named entity recognition of non-standard Serbian. Each tweet is also annotated for its automatically assigned standardness levels (T = technical standardness, L = linguistic standardness)..</p>
+<p>The corpus is available for download from the CLARIN.SI repository.</p>
 
 				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/manually-annotated-corpora#milicevic">Miličević and Ljubešić (2016)</a></p>
 			</td>
 			<td valign="top">
-				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=reldi_hr"><span class="fa fa-search"></span>KonText</a></p>
-<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/noske/run.cgi/corp_info?corpname=reldi_hr&struct_attr_stats=1"><span class="fa fa-search"></span>noSketch</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1043"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1793"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
 
 				
 			</td>
@@ -2880,28 +2909,32 @@
 		<tr>
 			<td valign="top">
 				<p>
-					<a href="http://hdl.handle.net/11372/LRT-1661">The ACL RD-TEX 2.0</a>
+					<a href="http://hdl.handle.net/11356/1822">Natural Language 2 Semantic Hypergraph Dataset NL2SH 1.0</a>
 				</p>
 				<p>
-					<strong>Size: </strong>33216 tokens
+					<strong>Size: </strong>6,851 tokens
 					<br>
-					<strong>Annotation: </strong>terminology extraction/classification
+					<strong>Annotation: </strong>semantic role labelling, coreference, tokenisation, PoS-tagging, lemmatisation, syntactic dependencies, named entities
 					<br>
-					<strong>Licence: </strong>CC BY-NC-SA 4.0
+					<strong>Licence: </strong>CLARIN.SI Licence ACA ID-BY-NC-INF-NORED
 				</p>
 			</td>
 			<td valign="top">
 				English
 			</td>
 			<td valign="top">
-				<p>This corpus contains 6818 terms extracted from abstracts of computational linguistics papers.</p>
-<p>The corpus is available for download from LINDAT and through KonText.</p>
+				<p>This corpus can be used to build and evaluate methods for knowledge extraction and representation based on a semantic hypergraph. Each sentence has natural language annotations and dedicated semantic hyperedge. Majority of the sentences used in this dataset are taken from the following sources:
+<ul>
+<li>John Eastwood, Oxford Guide to English Grammar, Oxford University Press, 2002.</li>
+<li>Andrew Redford, An Introduction to English Sentence Structure, Cambridge University Press, 2009.</li>
+<li>Essential English Grammar, Philip Gucker, Dover Publications, Inc. New York, 1966.</li></p>
+<p>
+The corpus is available for download from the CLARIN.SI repository.</p>
 
-				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/manually-annotated-corpora#QasemiZadeh%20and%20Schumann%202016">QasemiZadeh and Schumann (2016)</a></p>
+				
 			</td>
 			<td valign="top">
-				<p><a class="btn btn-primary text-nowrap" href="https://lindat.mff.cuni.cz/services/kontext/first_form?corpname=aclrd20_en_a"><span class="fa fa-search"></span>KonText</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11372/LRT-1661"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1822"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
 
 				
 			</td>
@@ -2941,27 +2974,28 @@
 		<tr>
 			<td valign="top">
 				<p>
-					<a href="http://hdl.handle.net/10.15155/1-00-0000-0000-0000-0015CL">TimeML annotated corpus of Estonian newspaper articles</a>
+					<a href="http://hdl.handle.net/11372/LRT-1661">The ACL RD-TEX 2.0</a>
 				</p>
 				<p>
-					<strong>Size: </strong>22,000 words
+					<strong>Size: </strong>33216 tokens
 					<br>
-					<strong>Annotation: </strong>temporal semantic annotations
+					<strong>Annotation: </strong>terminology extraction/classification
 					<br>
-					<strong>Licence: </strong>CC-BY-SA
+					<strong>Licence: </strong>CC BY-NC-SA 4.0
 				</p>
 			</td>
 			<td valign="top">
-				Estonian
+				English
 			</td>
 			<td valign="top">
-				<p>This corpus contains newspaper articles.</p>
-<p>The corpus is available for download from META-SHARE (CELR distribution).</p>
+				<p>This corpus contains 6818 terms extracted from abstracts of computational linguistics papers.</p>
+<p>The corpus is available for download from LINDAT and through KonText.</p>
 
-				
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/manually-annotated-corpora#QasemiZadeh%20and%20Schumann%202016">QasemiZadeh and Schumann (2016)</a></p>
 			</td>
 			<td valign="top">
-				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/10.15155/1-00-0000-0000-0000-0015CL"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+				<p><a class="btn btn-primary text-nowrap" href="https://lindat.mff.cuni.cz/services/kontext/first_form?corpname=aclrd20_en_a"><span class="fa fa-search"></span>KonText</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11372/LRT-1661"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
 
 				
 			</td>
@@ -3021,6 +3055,36 @@
 			</td>
 			<td valign="top">
 				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/10.15155/1-00-0000-0000-0000-00081L"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/10.15155/1-00-0000-0000-0000-0015CL">TimeML annotated corpus of Estonian newspaper articles</a>
+				</p>
+				<p>
+					<strong>Size: </strong>22,000 words
+					<br>
+					<strong>Annotation: </strong>temporal semantic annotations
+					<br>
+					<strong>Licence: </strong>CC-BY-SA
+				</p>
+			</td>
+			<td valign="top">
+				Estonian
+			</td>
+			<td valign="top">
+				<p>This corpus contains newspaper articles.</p>
+<p>The corpus is available for download from META-SHARE (CELR distribution).</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/10.15155/1-00-0000-0000-0000-0015CL"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
 
 				
 			</td>
@@ -3210,10 +3274,10 @@
 		<tr>
 			<td valign="top">
 				<p>
-					<a href="http://hdl.handle.net/11356/1171">Serbian Twitter training corpus ReLDI-NormTagNER-sr 2.0</a>
+					<a href="http://hdl.handle.net/11356/1794">Serbian Twitter training corpus ReLDI-NormTagNER-sr 3.0</a>
 				</p>
 				<p>
-					<strong>Size: </strong>92,000 tokens
+					<strong>Size: </strong>92,271 tokens
 					<br>
 					<strong>Annotation: </strong>word normalisation
 					<br>
@@ -3224,15 +3288,82 @@
 				Serbian
 			</td>
 			<td valign="top">
-				<p>This corpus contains Tweets. The corpus is morphosyntactically tagged following the <a href="http://nl.ijs.si/ME/V4/msd/html/index.html">MULTEXT-East Version 4 tagset</a>.</p>
-<p>The corpus is available through the concordancers KonText and noSketchEngine and for download from the CLARIN.SI repository.</p>
+				<p>This corpus contains manually annotated Serbian tweets. It is meant as a gold-standard training and testing dataset for tokenisation, sentence segmentation, word normalisation, morphosyntactic tagging, lemmatisation and named entity recognition of non-standard Serbian. Each tweet is also annotated for its automatically assigned standardness levels (T = technical standardness, L = linguistic standardness)..</p>
+<p>The corpus is available for download from the CLARIN.SI repository.</p>
 
 				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/manually-annotated-corpora#milicevic">Miličević and Ljubešić (2016)</a></p>
 			</td>
 			<td valign="top">
-				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=reldi_sr"><span class="fa fa-search"></span>KonText</a></p>
-<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/noske/run.cgi/corp_info?corpname=reldi_sr&struct_attr_stats=1"><span class="fa fa-search"></span>noSketch</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1171"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1794"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1772">ASR database ARTUR 1.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>884 hours
+					<br>
+					<strong>Annotation: </strong>orthographically transcribed speech
+					<br>
+					<strong>Licence: </strong>CC BY-SA 4.0
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This corpus was designed for the needs of developing automatic speech recognition for the Slovenian language. The complete database includes 1,067 hours of speech, of which 884 hours are transcribed, while the remaining 183 hours are recordings only.</p>
+<p>The audio files are available in <a href="http://hdl.handle.net/11356/1776">a separate repository entry</a>. Transcriptions are available in the original TRS format of the Transcriber 1.5.1 tool which was used for making the transcriptions. All transcriptions were made manually or manually corrected.</p>
+<p>The data are structured as follows: <ol> <li>Artur-B, read speech, 573 hours in total.</p>
+<p>It includes: (1a) Artur-B-Brani, 485 hours: Readings of sentences which were pre-selected from a 10% increment in the Gigafida 2.0 corpus. The sentences were chosen in such a way that they reflect the natural or the actual distribution of triphones in the words. They were distributed between 1,000 speakers, so that we recorded approx. 30 min in read form from each speaker. The speakers were balanced according to gender, age, region, and a small proportion of speakers were non-native speakers of Slovene. Each sentence is its own audio file and has a corresponding transcription file. (1b) Artur-B-Crkovani, 10 hours: Spellings. Speakers were asked to spell abbreviations and personal names and surnames, all chosen so that all Slovene letters were covered, plus the most common foreign letters. (1c) Artur-B-Studio, 51 hours: Designed for the development of speech synthesis. The sentences were read in a studio by a single speaker. Each sentence is its own audio file and has a corresponding transcription file. (1d) Artur-B-Izloceno, 27 hours: The recordings include different types of errors, typically, incorrect reading of sentences or a noisy environment.</li> <li>(2) Artur-J, public speech, 62 hours in total.</p>
+<p>It includes: (2a) Artur-J-Splosni, 62 hours: media recordings, online recordings of conferences, workshops, education videos, etc.</li> <li>(3) Artur-N, private speech, 74 hours in total.</p>
+<p>It includes: (3a) Artur-N-Obrazi, 6 hours: Speakers were asked to describe faces on pictures. Designed for a face-description domain-specific speech recognition. (3b) Artur-N-PDom, 7 hours: Speakers were asked to read pre-written sentences, as well as to express instructions for a potential smart-home system freely. Designed for a smart-home domain-specific speech recognition. (3c) Artur-N-Prosti, 61 hours: Monologues and dialogues between two persons, recorded for the purposes of the Artur database creation. Speakers were asked to conversate or explain freely on casual topics.</li> <li>(4) Artur-P, parliamentary speech, 201 hours in total.</p>
+<p>It includes: (4a) Artur-P-SejeDZ, 201 hours: Speech from the Slovene National Assembly.</li></p>
+<p>The corpus is available for download from the CLARIN.SI repository. </p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1772"><span class="fa fa-search"></span>Download (transcriptions)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1776"><span class="fa fa-search"></span>Download (audio files)</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1084">CMC training corpus Janes-Norm 1.2</a>
+				</p>
+				<p>
+					<strong>Size: </strong>184,755 tokens
+					<br>
+					<strong>Annotation: </strong>normalization
+					<br>
+					<strong>Licence: </strong>CC BY-SA 4.0
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This corpus is partially also manually annotated with MSD tags and lemmatized.</p>
+<p>The corpus is available through the concordancers KonText and noSketchEngine and for download from the CLARIN.SI repository.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=janes_norm"><span class="fa fa-search"></span>KonText</a></p>
+<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/noske/run.cgi/corp_info?corpname=janes_norm&struct_attr_stats=1"><span class="fa fa-search"></span>noSketch</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1084"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
 
 				
 			</td>
@@ -3304,6 +3435,82 @@
 		<tr>
 			<td valign="top">
 				<p>
+					<a href="http://hdl.handle.net/11356/1841">Slovenian Definition Extraction evaluation datasets RSDO-def 1.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>2,216 sentences
+					<br>
+					<strong>Annotation: </strong>term definition evaluation
+					<br>
+					<strong>Licence: </strong>CC BY-SA 4.0
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This corpus contains sentences extracted from the <a href="http://hdl.handle.net/11356/1470">Corpus of term-annotated texts RSDO5 1.1</a>, which contains texts with annotated terms from four different domains: biomechanics, linguistics, chemistry, and veterinary science. The file and sentence identifiers are the same as in the original RSDO corpus. The labels added to the sentences included in the dataset denote: 0: Non-definition; 1: Weak definition; 2: Definition.</p>
+<p>The dataset consists of two parts: 1. RSDO-def-random employed a random sampling strategy, with 14 definitions, 98 weak-definitions and 849 non-definitions; and 2. RSDO-def-larger added sentences to the random one by the pattern-based definition extraction as presented in Pollak et al. (2014). It contains 169 definitions, 214 weak-definitions and 872 non-definitions. Both parts were manually annotated by five terminographers. In case of discrepancies between annotators, a consensus was reached and the final label was confirmed by all five annotators. Duplicates were removed in both parts.</p>
+<p>The criteria for annotation are based on the standard ISO 1087-1:2000 (E/F) Terminology Work - Vocabulary, Part 1, Theory and Application, which explains a definition as follows: "Representation of a concept by a descriptive statement which serves to differentiate it from related concepts". Weak definition labels were assigned if the extracted sentences contained a term and at least one delimiting feature without a superordinate concept, or sentences consisting of superordinate concepts without delimiting features but with some typical examples. Instances were labeled as Non-definition if the sentence with the extracted concept did not contain any information about the concept or its delimiting features.</p>
+<p>The corpus is available for download from the CLARIN.SI repository.</p>
+
+				<p>For the relevant publication, see <a href="https://elex.link/elex2023/wp-content/uploads/19.pdf#SEPhttps://doi.org/10.4312/slo2.0.2014.1.1-40">Tran et al. (2023)#SEPPollak (2014)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1841"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1781">Slovenian Word in Context dataset SloWiC 1.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>14,958 items
+					<br>
+					<strong>Annotation: </strong>word sense disambiguation
+					<br>
+					<strong>Licence: </strong>CC BY-SA 4.0
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>The SloWIC dataset is a Slovenian dataset for the Word in Context task. Each example in the dataset contains a target word with multiple meanings and two sentences that both contain the target word. Each example is also annotated with a label that shows if both sentences use the same meaning of the target word. The dataset contains 1808 manually annotated sentence pairs and additional 13150 automatically annotated pairs to help with training larger models. The dataset is stored in the JSON format following the format used in the <a href="https://github.com/clarinsi/classla">SuperGLUE version</a> of the Word in Context task.</p>
+<p>Each example contains the following data fields:
+<ul>
+<li>word: The target word with multiple meanings</li>
+<li>sentence1: The first sentence containing the target word</li>
+<li>sentence2: The second sentence containing the target word</li>
+<li>idx: The index of the example in the dataset</li>
+<li>label: Label showing if the sentences contain the same meaning of the target word</li>
+<li>start1: Start of the target word in the first sentence</li>
+<li>start2: Start of the target word in the second sentence</li>
+<li>end1: End of the target word in the first sentence</li>
+<li>end2: End of the target word in the second sentence</li>
+<li>version: The version of the annotation</li>
+<li>manual_annotation: Boolean showing if the label was manually annotated</li>
+<li>group: The group of annotators that labelled the example</li>
+</ul></p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1781"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
 					<a href="http://hdl.handle.net/11356/1198">Terminology identification dataset KAS-term 1.0</a>
 				</p>
 				<p>
@@ -3325,38 +3532,6 @@
 			</td>
 			<td valign="top">
 				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1198"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
-
-				
-			</td>
-		</tr>
-	</tbody>
-	<tbody>
-		<tr>
-			<td valign="top">
-				<p>
-					<a href="http://hdl.handle.net/11356/1084">CMC training corpus Janes-Norm 1.2</a>
-				</p>
-				<p>
-					<strong>Size: </strong>184,755 tokens
-					<br>
-					<strong>Annotation: </strong>normalization
-					<br>
-					<strong>Licence: </strong>CC BY-SA 4.0
-				</p>
-			</td>
-			<td valign="top">
-				Slovenian
-			</td>
-			<td valign="top">
-				<p>This corpus is partially also manually annotated with MSD tags and lemmatized.</p>
-<p>The corpus is available through the concordancers KonText and noSketchEngine and for download from the CLARIN.SI repository.</p>
-
-				
-			</td>
-			<td valign="top">
-				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=janes_norm"><span class="fa fa-search"></span>KonText</a></p>
-<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/noske/run.cgi/corp_info?corpname=janes_norm&struct_attr_stats=1"><span class="fa fa-search"></span>noSketch</a></p>
-<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1084"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
 
 				
 			</td>
