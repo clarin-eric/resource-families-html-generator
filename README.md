@@ -3,14 +3,9 @@ ClarTable
 
 Installation
 ------------
-Works with Python 3.5, 3.6, 3.7
-Depending on your default python version:
+Works with Python ^3.12
 ```bash
-pip install -r requirements.txt
-```
-or
-```bash
-pip3 install -r requirements.txt
+pip install ./resource_families_html_generator
 ```
 
 About

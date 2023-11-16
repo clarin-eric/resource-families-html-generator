@@ -2,7 +2,7 @@ from pandas import DataFrame, Series
 from typing import List, Set, Tuple
 
 
-from utils import EmptyColumnError
+from .utils import EmptyColumnError
 
 
 class Tag:
