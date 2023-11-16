@@ -21,7 +21,9 @@ About
 ```bash
 usage: python -m rfhg [-h] -i PATH -r PATH -o PATH
 
-Create html table from given data and rules. To navigate static resources within the module prepend `static.` to the path, eg. `-r static.rules/rules.json`
+Create html table from given data and rules. 
+To navigate static resources within the module prepend `static.` 
+to the path, eg. `-r static.rules/rules.json`
 
 optional arguments:
   -h, --help  show this help message and exit
