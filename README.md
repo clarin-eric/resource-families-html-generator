@@ -3,30 +3,33 @@ ClarTable
 
 Installation
 ------------
-Works with Python ^3.12
+Works with Python `^3.9`
 ```bash
-pip install ./resource_families_html_generator
+git clone git@github.com:clarin-eric/resource-families-html-generator.git # via SSH or
+git clone https://github.com/clarin-eric/resource-families-html-generator.git # via HTTPS
+cd ./resource-families-html-generator/
+pip install .
 ```
 
 About
 -----
-*ClarTable* is a python script for generating html table containing data about corpora from .csv file.
-
+*ClarTable* is a Python module for generating html presentation layer for tabular data from .csv file.
 
 ### Usage
 
 #### Locally:
 ```bash
-usage: run.py [-h] -i PATH -r PATH -o PATH
+usage: python -m rfhg [-h] -i PATH -r PATH -o PATH
 
-Create html table from given data and rules
+Create html table from given data and rules. To navigate static resources within the module prepend `static.` to the path, eg. `-r static.rules/rules.json`
 
 optional arguments:
   -h, --help  show this help message and exit
   -i PATH     path to a .csv file or folder with .csv files
-  -r PATH     path to json file with rules
-  -o PATH     path to file where output html table will be written
+  -r PATH     path to a .json file with rules
+  -o PATH     path to file where output html table will be generated
 ```
+
 
 #### Via CI:
 The html tables for resource families can be generated via GitHub. Push new .csv files to `/resouce_families` and after processing they will appear in gh-pages branch.   

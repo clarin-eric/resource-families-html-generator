@@ -3,14 +3,14 @@
 set -e
 
 # process Corpora
-for D in ./rfhg/static/resource_families/Corpora/*/; do 
+for D in ./static/resource_families/Corpora/*/; do 
 	[ -d "$D" ] && python -m rfhg -i "$D" -o "$D" -r static.rules/rules.json
 	trap "echo Corpora that failed to process: $D" 1 
 done
 
 # process Lexical_Resources
-for D in ./rfhg/static/resource_families/Lexical_Resources/*/; do 
-	[ -d "$D" ] && python -m rfhg -i "$D" -o "$D" -r ./rules.json
+for D in ./static/resource_families/Lexical_Resources/*/; do 
+	[ -d "$D" ] && python -m rfhg -i "$D" -o "$D" -r static.rules/rules.json
 	trap "echo Corpora that failed to process: $D" 1 
 done
 
