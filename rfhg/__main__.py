@@ -19,9 +19,16 @@ args = parser.parse_args()
 if __name__ == "__main__":
     rules = read_rules(args.r)
     clartable = Clartable(rules)
-    if not os.path.exists('./tables/'):
-        os.makedirs('./tables/')
-    output = open(os.path.join('./tables/', os.path.basename(os.path.normpath(args.o)) + '.html'), 'w')
+
+    output_path = args.o
+    print(output_path)
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+    if os.path.isdir(output_path):
+        file_name = os.path.basename(os.path.normpath(output_path)) + '.html'
+        output_path = os.path.join(output_path, file_name)
+    print(output_path)
+    output = open(output_path, 'w')
 
     # input is a single file
     input_path = resolve_static(args.i)
