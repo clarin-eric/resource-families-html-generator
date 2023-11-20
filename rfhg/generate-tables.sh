@@ -2,20 +2,21 @@
 
 set -e
 
+echo "CORPORA"
 # process Corpora
 for D in ./static/resource_families/Corpora/*/; do 
         [ -d "$D" ] && python -m rfhg -i "$D" -o "./../tables/$(basename "$D")" -r static.rules/rules.json
         trap "echo Corpora that failed to process: $D" 1 
 done
 
-
+echo "LEXICAL RESOURCES"
 # process Lexical_Resources
 for D in ./static/resource_families/Lexical_Resources/*/; do 
 	[ -d "$D" ] && python -m rfhg -i "$D" -o "./../tables/$(basename "$D")" -r static.rules/rules.json
 	trap "echo Corpora that failed to process: $D" 1 
 done
 
-
+echo "TOOLS"
 # process Tools
 python -m rfhg -i static.resource_families/Tools/"Named entity recognition" -o "./../tables/Tools/Named entity recognition" -r static.rules/rules_ner.json
 python -m rfhg -i static.resource_families/Tools/"Normalization" -o "./../tables/Tools/Normalization" -r static.rules/rules_norm.json
