@@ -21,4 +21,3 @@ python -m rfhg -i static.resource_families/Tools/"Part-of-speech tagging and lem
 python -m rfhg -i static.resource_families/Tools/"Tools for sentiment analysis" -o "./../tables/Tools/Tools for sentiment analysis" -r static.rules/rules_senti.json
 python -m rfhg -i static.resource_families/Tools/"Corpus query tools" -o "./../tables/Tools/Corpus query tools" -r static.rules/rules_query.json
 ls
-ls './../'
