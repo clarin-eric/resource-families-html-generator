@@ -15,9 +15,12 @@ for D in ./static/resource_families/Lexical_Resources/*/; do
 	trap "echo Corpora that failed to process: $D" 1 
 done
 
+
 # process Tools
 python -m rfhg -i static.resource_families/Tools/"Named entity recognition" -o "./../tables/Tools/Named entity recognition" -r static.rules/rules_ner.json
 python -m rfhg -i static.resource_families/Tools/"Normalization" -o "./../tables/Tools/Normalization" -r static.rules/rules_norm.json
 python -m rfhg -i static.resource_families/Tools/"Part-of-speech tagging and lemmatization" -o "./../tables/Tools/Part-of-speech tagging and lemmatization" -r static.rules/rules_pos.json
 python -m rfhg -i static.resource_families/Tools/"Tools for sentiment analysis" -o "./../tables/Tools/Tools for sentiment analysis" -r static.rules/rules_senti.json
+echo "prior"
 python -m rfhg -i static.resource_families/Tools/"Corpus query tools" -o "./../tables/Tools/Corpus query tools" -r static.rules/rules_query.json
+echo "posterior"
