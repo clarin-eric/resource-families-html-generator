@@ -23,7 +23,7 @@ jobs:
       - name: Generate tables
         run: |
           mkdir tables || true
-          python -m rfhg -o ./tables/
+          ./rfhg/generate-tables.sh
           echo "Tables generated"
       - name: Deploy tables to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4 # https://github.com/JamesIves/github-pages-deploy-action
