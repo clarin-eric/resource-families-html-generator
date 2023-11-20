@@ -21,13 +21,11 @@ if __name__ == "__main__":
     clartable = Clartable(rules)
 
     output_path = args.o
-    print(output_path)
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     if os.path.isdir(output_path):
         file_name = os.path.basename(os.path.normpath(output_path)) + '.html'
         output_path = os.path.join(output_path, file_name)
-    print(output_path)
     output = open(output_path, 'w')
 
     # input is a single file
