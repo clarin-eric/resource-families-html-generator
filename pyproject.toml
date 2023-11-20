@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "resource_families_html_generator"
 description = "CLARIN presentation layer generator for Resource Families"
-version = "1.0.0-dev"
+version = "1.0.1"
 license = "./LICENSE.txt"
 authors = [
     "Michał Gawor <michal@clarin.eu>",
