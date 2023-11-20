@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.0.1] - 20.11.2023
+- CI pipeline fix for deployment to gh-pages
+
 
 ## [1.0.0] - 20.11.2023
 

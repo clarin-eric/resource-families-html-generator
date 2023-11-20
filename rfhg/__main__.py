@@ -32,9 +32,7 @@ if __name__ == "__main__":
     input_path = resolve_static(args.i)
     if os.path.isfile(os.path.normpath(input_path)):
         print("Processing file: ", input_path)
-        print(input_path)
         data = read_data(input_path)
-        print(data)
         title = table_title(input_path)
         table = title + clartable.generate(data)
         output.write(table)
