@@ -1,0 +1,980 @@
+<h3 id"table-title">CMC corpora in the CLARIN infrastructure</h3>
+<table class ="table" cellspacing="5">
+	<thead>
+		<tr>
+			<th valign="top">Corpus
+			</th>
+			<th valign="top">Language
+			</th>
+			<th valign="top">Description
+			</th>
+			<th valign="top">Availability
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1804">Web corpus MaCoCu</a>
+				</p>
+				<p>
+					<strong>Annotation: </strong>annotated with extensive metadata
+					<br>
+					<strong>Licence: </strong>CC0-No Rights Reserved
+				</p>
+			</td>
+			<td valign="top">
+				Albanian, Bosnian, Bulgarian, Catalan, Croatian, Modern Greek, Icelandic, Macedonian, Maltese, Montenegrin, Serbian, Slovenian, Turkish, Ukrainian
+			</td>
+			<td valign="top">
+				<p>These corpora are a collection containing web texts and were built by crawling national internet top-level domains (specified below) and by extending the crawl dynamically to other domains as well. The crawler is available at <a href="https://github.com/macocu/MaCoCu-crawler">MaCoCu GitHub channel</a>. Considerable effort was devoted into cleaning the extracted text to provide a high-quality web corpus. This was achieved by removing <a href="https://corpus.tools/wiki/Justext">boilerplate</a> and <a href="https://corpus.tools/wiki/Onion">near-duplicated paragraphs</a>, discarding very short texts as well as texts that are not in the target language. Furthermore, samples from the largest 1,500 domains were manually checked and bad domains, such as machine-translated domains, were removed.</p>
+<p>The dataset is characterized by extensive metadata which allows filtering the dataset based on text quality and <a href="https://github.com/bitextor/monotextor">other criteria</a>, making the corpus highly useful for corpus linguistics studies, as well as for training language models and other language technologies. In XML format, each document is accompanied by the following metadata: title, crawl date, url, domain, file type of the original document, distribution of languages inside the document, and a fluency score based on a language model. The text of each document is divided into paragraphs that are accompanied by metadata on the information whether a paragraph is a heading or not, metadata on the paragraph quality (labels, such as “short” or “good”, assigned based on paragraph length, URL and stopword density via the <a href="https://corpus.tools/wiki/Justext">jusText tool</a>) and fluency (score between 0 and 1, assigned with the <a href="https://github.com/bitextor/monocleaner">Monocleaner tool</a>), the automatically identified language of the text in the paragraph, and information whether the paragraph contains sensitive information (identified via the <a href="https://github.com/bitextor/biroamer">Biroamer tool</a>). As opposed to the previous version in the case of corpora in version 2.0, this version has more accurate metadata on languages of the texts, which was achieved by using <a href="https://github.com/CLD2Owners/cld2">Google's Compact Language Detector 2 (CLD2)</a>, a high-performance language detector supporting many languages. Other tools, used for web corpora creation and curation, have been updated as well, resulting in an even cleaner, as well as larger corpus.</p>
+<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be easily read with the <a href="https://pypi.org/project/prevert/">prevert parser</a>.</p>
+
+				<p>For the relevant publication, see <a href="https://hdl.handle.net/11370/685514a8-947e-44f9-83cf-90356c5f1684">Bañón et al. (2022)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1804"><span class="fa fa-search"></span>Download (Albanian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1808"><span class="fa fa-search"></span>Download (Bosnian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1800"><span class="fa fa-search"></span>Download (Bulgarian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1837"><span class="fa fa-search"></span>Download (Catalan)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1806"><span class="fa fa-search"></span>Download (Croatian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1839"><span class="fa fa-search"></span>Download (Modern Greek)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1805"><span class="fa fa-search"></span>Download (Icelandic)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1801"><span class="fa fa-search"></span>Download (Macedonian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1803"><span class="fa fa-search"></span>Download (Maltese)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1809"><span class="fa fa-search"></span>Download (Montenegrin)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1807"><span class="fa fa-search"></span>Download (Serbian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1795"><span class="fa fa-search"></span>Download (Slovenian)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1802"><span class="fa fa-search"></span>Download (Turkish)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1838"><span class="fa fa-search"></span>Download (Ukrainian)</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11858/00-097C-0000-000E-011B-8">Corpus of contemporary blogs</a>
+				</p>
+				<p>
+					<strong>Size: </strong>1 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, <a href="https://nlp.fi.muni.cz/projekty/cocb/">sentence tagging</a>
+					<br>
+					<strong>Licence: </strong>CC-BY
+				</p>
+			</td>
+			<td valign="top">
+				Czech
+			</td>
+			<td valign="top">
+				<p>This corpus contains blog posts.</p>
+<p>The corpus is available for download from  LINDAT.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-000E-011B-8"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/10032/157d6fee6134f5beab09b159dd7c710a">SoNaR New Media</a>
+				</p>
+				<p>
+					<strong>Size: </strong>35 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, PoS-tagged, lemmatised
+					<br>
+					<strong>Licence: </strong>CLARIN ACA
+				</p>
+			</td>
+			<td valign="top">
+				Dutch
+			</td>
+			<td valign="top">
+				<p>This corpus contains tweets, chats and SMS from 2005 to 2012.</p>
+<p>The corpus is available for searching online through the OpenSONAR environment.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Sanders%202012">Sanders (2012)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://opensonar.inl.nl/"><span class="fa fa-search"></span>Concordancer</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://www.kielipankki.fi/corpora/glowbe/">Corpus of Global Web-Based English</a>
+				</p>
+				<p>
+					<strong>Size: </strong>1.8 billion words; 1.8 million texts
+					<br>
+					<strong>Licence: </strong>CLARIN RES (download); CLARIN ACA (online)
+				</p>
+			</td>
+			<td valign="top">
+				English
+			</td>
+			<td valign="top">
+				<p>This corpus contains texts from web-pages in United States, Great Britain, Australia, India, and 16 other countries. About 60% of the texts come from blogs.</p>
+<p>The corpus is available for download from META-SHARE (the Finnish Language Bank) and for online browsing through the concordancer Korp.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2017061928"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2017061929"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11495/DAB8-BE65-64FD-4">NTAP English</a>
+				</p>
+				<p>
+					<strong>Size: </strong>660,798,199 tokens
+				</p>
+			</td>
+			<td valign="top">
+				English
+			</td>
+			<td valign="top">
+				<p>This corpus contains blog posts that are related to climate change issues across science, politics, and the environment.  The vast majority of the posts are from 2005 onwards.</p>
+<p>The corpus is available for searching online through the Corpuscle concordancer.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Salway%20et%20al.%202016">Salway et al. (2016)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://clarino.uib.no/korpuskel/landing-page?identifier=ntap&view=short"><span class="fa fa-search"></span>Concordancer</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/20.500.12124/7">DIDI – The DiDi corpus of South Tyrolean CMC 1.0.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>600,000 tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, PoS-tagged, lemmatised
+					<br>
+					<strong>Licence: </strong>ACA-BY-NC-NORED 1.0
+				</p>
+			</td>
+			<td valign="top">
+				English, German, Italian, Ladino
+			</td>
+			<td valign="top">
+				<p>This corpus consists of Facebook posts gathered from 136 Facebook users from South Tyrol. All texts are anonymised.</p>
+<p>The corpus is available for download from the EURAC Research CLARIN repository.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Frey%20et%20al.%202016]">Frey et al. (2016)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/20.500.12124/7"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://www.cl.ut.ee/korpused/segakorpus/uusmeedia/">The Mixed Corpus: New Media</a>
+				</p>
+				<p>
+					<strong>Size: </strong>25 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised
+				</p>
+			</td>
+			<td valign="top">
+				Estonian
+			</td>
+			<td valign="top">
+				<p>This corpus contains chat room messages, forum posts and news comments from 2000 to 2008</p>
+<p>The corpus is available for download from a dedicated webpage associated with CLARIN Estonia and through a dedicated concordancer.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://www.cl.ut.ee/korpused/kasutajaliides"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://www.cl.ut.ee/korpused/segakorpus/uusmeedia/"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://urn.fi/urn:nbn:fi:lb-20150126">SFNET Corpus</a>
+				</p>
+				<p>
+					<strong>Size: </strong>100 million words
+					<br>
+					<strong>Annotation: </strong>PoS-tagged, sentence and word segmentation
+					<br>
+					<strong>Licence: </strong>CLARIN ACA – NC
+				</p>
+			</td>
+			<td valign="top">
+				Finnish
+			</td>
+			<td valign="top">
+				<p>This corpus contains written posts from the SFNET forum in Finnish from 2002 to 2003.</p>
+<p>The PoS-tagging has been done with the FI-FDG Parser, which uses a computational implementation of Functional Dependency Grammar.</p>
+<p>The corpus is available for download from META-SHARE (the Finnish Language Bank)</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-20150126"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://urn.fi/urn:nbn:fi:lb-2017021506">Suomi 24 Corpus</a>
+				</p>
+				<p>
+					<strong>Size: </strong>2.6 billion tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, MSD-tagged
+					<br>
+					<strong>Licence: </strong>CLARIN ACA
+				</p>
+			</td>
+			<td valign="top">
+				Finnish
+			</td>
+			<td valign="top">
+				<p>This corpus contains forum posts from the Suomi24 website from 2001 to 2016.</p>
+<p>The corpus is available for download from the FIN-CLARIN repository and through the concordancer Korp.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://korp.csc.fi/#?corpus=suomi24&cqp=[]"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2017021502"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://urn.fi/urn:nbn:fi:lb-2014052718">The HS.fi News and Comments Corpus</a>
+				</p>
+				<p>
+					<strong>Size: </strong>8 million tokens; 593,760 sentences; 93,602 texts
+					<br>
+					<strong>Annotation: </strong>PoS-tagged, lemmatised, syntactically parsed
+					<br>
+					<strong>Licence: </strong>CLARIN ACA – NC
+				</p>
+			</td>
+			<td valign="top">
+				Finnish
+			</td>
+			<td valign="top">
+				<p>This corpus contains the domestic news of the <a href="https://www.hs.fi/">Helsingin Sanomat</a> website and their comments from 5 September 2011 to 4 September 2012.</p>
+<p>The corpus has been syntactically parsed using TDT alpha. </p>
+<p>The corpus is available for download from META-SHARE (the Finnish Language Bank) and for online browsing through the concordancer Korp.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2015050503"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2014052718"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://urn.fi/urn:nbn:fi:lb-2015031802">Ylilauta Corpus</a>
+				</p>
+				<p>
+					<strong>Size: </strong>26.9 million words
+					<br>
+					<strong>Annotation: </strong>PoS-tagged, lemmatised, syntactically parsed, named entities
+					<br>
+					<strong>Licence: </strong>CC BY-NC
+				</p>
+			</td>
+			<td valign="top">
+				Finnish
+			</td>
+			<td valign="top">
+				<p>The corpus contains text from discussions of the <a href="https://ylilauta.org/">Ylilauta</a> online discussion board from 2012 to 2014.</p>
+<p>The corpus has been syntactically annotated with the TDT alpha parser, while the named entities have been assigned using the FiNER tool.</p>
+<p>The corpus is available for download from META-SHARE (the Finnish Language Bank) and for online browsing through the concordancer Korp.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2015040103"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://urn.fi/urn:nbn:fi:lb-2016101210"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://hdl.handle.net/11403/comere">CoMeRe repository</a>
+				</p>
+				<p>
+					<strong>Size: </strong>80 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, mostly untagged
+					<br>
+					<strong>Licence: </strong>CC-BY
+				</p>
+			</td>
+			<td valign="top">
+				French
+			</td>
+			<td valign="top">
+				<p>This corpus contains e-mails, forum posts, online chats, tweets and SMS.</p>
+<p>The corpus is available for download from Ortolang.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Panckhurst%202017">Panckhurst (2017)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://hdl.handle.net/11403/comere"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11495/DE48-00A5-6536-1">NTAP French</a>
+				</p>
+				<p>
+					<strong>Size: </strong>1,506,064,082 words
+				</p>
+			</td>
+			<td valign="top">
+				French
+			</td>
+			<td valign="top">
+				<p>This corpus contains blog posts that are related to climate change issues across science, politics, and the environment. The vast majority of the posts are from 2005 onwards.</p>
+<p>The corpus is available for searching online through the Corpuscle concordancer.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Salway%20et%20al.%202016">Salway et al. (2016)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://clarino.uib.no/korpuskel/landing-page?identifier=ntap-fra&view=short"><span class="fa fa-search"></span>Concordancer</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11858/00-203Z-0000-002D-ECC7-2">Dortmund Chat Corpus</a>
+				</p>
+				<p>
+					<strong>Size: </strong>1 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, PoS-tagged, lemmatised
+					<br>
+					<strong>Licence: </strong>CC-BY
+				</p>
+			</td>
+			<td valign="top">
+				German
+			</td>
+			<td valign="top">
+				<p>This corpus contains online chats from 2000 to 2006</p>
+<p>The corpus is available for download from the repository of CLARIN-D</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Bei%C3%9Fwenger%202013">Beißwenger (2013)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11858/00-203Z-0000-002D-ECC7-2"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/20.500.12124/3">PAISÀ Corpus of Italian Web Text</a>
+				</p>
+				<p>
+					<strong>Size: </strong>380,000 pages, 250 million words
+					<br>
+					<strong>Licence: </strong>CC BY-NC-SA 4.0
+				</p>
+			</td>
+			<td valign="top">
+				Italian
+			</td>
+			<td valign="top">
+				<p>This corpus contains approximately 380,000 documents coming from about 1,000 different websites, for a total of about 250 million words. Approximately 260,000 documents are from Wikipedia, approx. 5,600 from other Wikimedia Foundation projects. About 9,300 documents come from Indymedia, and we estimate that about 65,000 documents come from blog services.</p>
+<p>The corpus is available for download from the EURAC Research CLARIN repository.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/20.500.12124/3"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/20.500.11821/11">LITIS v.1</a>
+				</p>
+				<p>
+					<strong>Size: </strong>190,000 comments
+					<br>
+					<strong>Licence: </strong>CLARIN_ACA
+				</p>
+			</td>
+			<td valign="top">
+				Lithuanian
+			</td>
+			<td valign="top">
+				<p>This corpus contains forum posts from portals delfi.lt and lrytas.lt from 2010 to 2014.</p>
+<p>The corpus is available for download from the CLARIN-LT repository.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/20.500.11821/11"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1752">Serbian Web Corpus PDRS 1.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>715 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, MSD-tagged (MULTEXT-East & UD), lemmatised, annotated for text source
+					<br>
+					<strong>Licence: </strong>CC BY
+				</p>
+			</td>
+			<td valign="top">
+				Serbian
+			</td>
+			<td valign="top">
+				<p>This corpus contains texts from the web obtained by crawling the .rs domain. Crawling has been done in September and October 2022 with BootCat. As search terms, appr. 2,800 word forms with a frequency between 5,000 and 500,000 in srWaC have been used. The texts are deduplicated, cyrillic texts have been transliterated into the Latin alphabet. The linguistic processing was done with the <a href="https://github.com/clarinsi/classla">CLASSLA package</a> for tokenization, lemmatization and morpho-syntactic tagging (both MULTEXT-East and Universal Dependencies).</p>
+<p>In addition, some 80% of the URLs are manually tagged for 10 different types of sources ("area"): media (media outlets with several posts daily), inform (topic-centered sites with infrequent posts - maximum 3 per day), company (presentations of companies), state (websites of government bodies on nationa, regional and local level), forum (forum posts), portal (topic-centered portals without daily coverage), science (scientific publications), shop (with descriptions of products), database (knowledge bases, dictionaries, databases and similar) and community (NGOs, fan clubs, associations and other). The corpus is distributed in the CoNLL-U format in batches of appr. 2x50 mio. tokens.</p>
+<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be queried through noSketchEngine and KonText concordancers.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/ske/#dashboard?corpname=pdrs10"><span class="fa fa-search"></span>Concordancer (noSketchEngine)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/query?corpname=pdrs10"><span class="fa fa-search"></span>Concordancer(KonText)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1752"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1138">Blog post and comment corpus Janes-Blog 1.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>34 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, sentence segmented, MSD-tagged, lemmatised
+					<br>
+					<strong>Licence: </strong>CC-BY
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This corpus contains blog posts from RTV Slovenija and Publishwall.</p>
+<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be queried through KonText</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Fi%C5%A1er%20et%20al.%202018">Fišer et al. (2018)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=janes_blog"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1138"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1139">Forum corpus Janes-Forum 1.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>47 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, sentence segmented, MSD-tagged, lemmatised
+					<br>
+					<strong>Licence: </strong>CC-BY
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This corpus contains forum posts from Avtomobilizem.com, MedOver.net and RTV Slovenija.</p>
+<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be queried through KonText.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Fi%C5%A1er%20et%20al.%202018">Fišer et al. (2018)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=janes_forum"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1139"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1782">Monitor corpus of Slovene Trendi 2023-02</a>
+				</p>
+				<p>
+					<strong>Size: </strong>700 million tokens
+					<br>
+					<strong>Annotation: </strong>PoS-tagged, lemmatised, syntactically parsed, annotated for named entities and topics
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This corpus contains news from 107 different media websites, published by 72 different publishers, and is a monitor corpus of Slovene. Trendi 2023-02 covers the period from January 2019 to February 2023, complementing the <a href="http://hdl.handle.net/11356/1320">Gigafida 2.0</a> reference corpus of written Slovene. All the contents of the Trendi corpus are at the moment obtained using the <a href=" http://newsfeed.ijs.si/">Jožef Stefan Institute Newsfeed service</a>. The texts have been annotated using the <a href="https://github.com/clarinsi/classla">CLASSLA-Stanza pipeline</a>, including syntactic parsing according to the <a href="https://universaldependencies.org/sl/">Universal Dependencies</a> and <a href="https://nl.ijs.si/janes/wp-content/uploads/2017/09/SlovenianNER-eng-v1.1.pdf">Named Entities</a>.</p>
+<p>An important addition are topics or thematical categories, which have been automatically assigned to each text. There are 13 categories altogether: Arts and culture, Crime and accidents, Economy, Environment, Health, Leisure, Politics and Law, Science and Technology, Society, Sports, Weather, Entertainment, and Education. Text classification models are available at <a href="http://hdl.handle.net/11356/1709">Text classification model SloBERTa-Trendi-Topics 1.0</a>, <a href="http://hdl.handle.net/11356/1710">Text classification model fastText-Trendi-Topics 1.0</a>, and <a href="https://huggingface.co/cjvt/sloberta-trendi-topics">SloBERTa model</a>. At the moment, the corpus is not available as a dataset due to copyright restrictions but we hope to make at least some of it available in the near future.</p>
+<p>The corpus can be queried through noSketchEngine and KonText concordancers.</p>
+
+				<p>For the relevant publication, see <a href="https://euralex.org/wp-content/themes/euralex/proceedings/Euralex%202022/EURALEX2022_Pr_p230-239_Kosem.pdf#SEPhttps://nl.ijs.si/jtdh22/pdf/JTDH2022_Kosem-et-al_Spremljevalni-korpus-Trendi.pdf">Kosem (2022)#SEPKosem et al. (2022)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/ske/#dashboard?corpname=trendi"><span class="fa fa-search"></span>Concordancer (noSketchEngine)</a></p>
+<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/query?corpname=trendi"><span class="fa fa-search"></span>Concordancer(KonText)</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1140">News comment corpus Janes-News 1.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>14 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, sentence segmented, MSD-tagged, lemmatised
+					<br>
+					<strong>Licence: </strong>CC-BY
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This corpus contains news comments from RTV Slovenija, Mladina and Reporter.</p>
+<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be queried through KonText.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Fi%C5%A1er%20et%20al.%202018">Fišer et al. (2018)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=janes_news"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1140"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1142">Twitter corpus Janes-Tweet 1.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>139 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, sentence segmented, MSD-tagged, lemmatised
+					<br>
+					<strong>Licence: </strong>CC-BY
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This corpus contains tweets written by Slovenian Twitter users from 2013 to 2017.</p>
+<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be queried through KonText.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Fi%C5%A1er%20et%20al.%202018">Fišer et al. (2018)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=janes_tweet"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1142"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://hdl.handle.net/11356/1137">Wikipedia talk corpus Janes-Wiki 1.0</a>
+				</p>
+				<p>
+					<strong>Size: </strong>5 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, sentence segmented, MSD-tagged, lemmatised
+					<br>
+					<strong>Licence: </strong>CC-BY
+				</p>
+			</td>
+			<td valign="top">
+				Slovenian
+			</td>
+			<td valign="top">
+				<p>This corpus contains Slovenian Wikipedia user and talk pages.</p>
+<p>The corpus is available for download from the Slovenian repository CLARIN.SI and can be queried through KonText.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Fi%C5%A1er%20et%20al.%202018">Fišer et al. (2018)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.clarin.si/kontext/first_form?corpname=janes_wiki"><span class="fa fa-search"></span>Concordancer</a></p>
+<p><a class="btn btn-primary text-nowrap" href="http://hdl.handle.net/11356/1137"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h3 id"table-title">Other CMC corpora</h3>
+<table class ="table" cellspacing="5">
+	<thead>
+		<tr>
+			<th valign="top">Corpus
+			</th>
+			<th valign="top">Language
+			</th>
+			<th valign="top">Description
+			</th>
+			<th valign="top">Availability
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://repository.uantwerpen.be/docman/irua/948a9a/159941.pdf">Flemish Online Teenage Talk</a>
+				</p>
+				<p>
+					<strong>Size: </strong>2.9 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised
+				</p>
+			</td>
+			<td valign="top">
+				Dutch
+			</td>
+			<td valign="top">
+				<p>This corpus contains Facebook posts and WhatsApp messages from 2015 and 2016.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Hilte%20et%20al.%202016">Hilte et al. (2016).</a></p>
+			</td>
+			<td valign="top">
+				
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://www.uni-potsdam.de/langage/la-bank/ebay.php">eBay petites annonces</a>
+				</p>
+				<p>
+					<strong>Size: </strong>100,000 tokens
+					<br>
+					<strong>Annotation: </strong><a href="https://www.uni-potsdam.de/langage/la-bank/ebay.php">see here</a>
+					<br>
+					<strong>Licence: </strong>CC BY-NC-SA 4.0
+				</p>
+			</td>
+			<td valign="top">
+				French
+			</td>
+			<td valign="top">
+				<p>This corpus contains eBay listings from 2005, 2017, and 2018. The corpus is manually annotated.</p>
+<p>The corpus is available for download from a dedicated webpage.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Gerstenberg,%20Hekkel,%20and%C2%A0Hewett%202019">Gerstenberg, Hekkel, and Hewett (2019)</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://www.uni-potsdam.de/langage/la-bank/ebay.php"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://cosmas2.ids-mannheim.de/cosmas2-web/">Dereko – News and Wikipedia subcorpus</a>
+				</p>
+				<p>
+					<strong>Size: </strong>670 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised
+				</p>
+			</td>
+			<td valign="top">
+				German
+			</td>
+			<td valign="top">
+				<p>This corpus contains content from newsgroup posts and Wikipedia.</p>
+<p>The corpus is available through a dedicated concordancer.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://www.ids-mannheim.de/cosmas2/web-app/browser/"><span class="fa fa-search"></span>Concordancer</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://www.dwds.de/r#group-Spezialkorpora">DWDS – Blogs</a>
+				</p>
+				<p>
+					<strong>Size: </strong>102 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised
+				</p>
+			</td>
+			<td valign="top">
+				German
+			</td>
+			<td valign="top">
+				<p>This corpus contains blog posts.</p>
+<p>The corpus is available through a dedicated concordancer.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://www.dwds.de/r#group-Spezialkorpora"><span class="fa fa-search"></span>Concordancer</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://hal.archives-ouvertes.fr/hal-01323274/document">Monitor corpus of tweets from Austrian users</a>
+				</p>
+				<p>
+					<strong>Size: </strong>40 million tweets
+					<br>
+					<strong>Annotation: </strong>tokenised, lemmatised
+				</p>
+			</td>
+			<td valign="top">
+				German, English
+			</td>
+			<td valign="top">
+				<p>The corpus contains tweets from 2007 to 2017.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Barbaresi%202016">Barbaresi (2016).</a></p>
+			</td>
+			<td valign="top">
+				
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="https://www.researchgate.net/publication/311674809_Political_Discourse_in_Polish_Internet-Corpus_of_Highly_Emotive_Internet_Discussions">Corpus of Highly Emotive Internet Discussions</a>
+				</p>
+				<p>
+					<strong>Size: </strong>160 milllion tokens
+					<br>
+					<strong>Annotation: </strong>tokenised
+				</p>
+			</td>
+			<td valign="top">
+				Polish
+			</td>
+			<td valign="top">
+				<p>The corpus contains tweets.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Sobkowicz%202016">Sobkowicz (2016).</a></p>
+			</td>
+			<td valign="top">
+				
+				<p>For access, contact the <a href="mailto:antoni.sobkowicz@opi.org.pl">authors.</a></p>
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://sms4science.ch/Main/WebHome">sms4science</a>
+				</p>
+				<p>
+					<strong>Size: </strong>0.5 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised, PoS-tagged, lemmatised
+				</p>
+			</td>
+			<td valign="top">
+				Swiss German, German, French, Italian, Romansh
+			</td>
+			<td valign="top">
+				<p>This corpus contains around 25000 SMS from 2009.</p>
+<p>The corpus comes in two different versions which are available through separate concordancers - <em>SMS Navigator</em> and <em>ANNIS</em>. The version accessible through <em>ANNIS</em> is more richly annotated and includes PoS-tagging, normalization, annotation of nonce borrowings, etc. Access through the concordancers requires free registration.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#D%C3%BCrscheid%20and%20Stark%202011">Dürscheid and Stark (2011).</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="https://sms.linguistik.uzh.ch/SMS4science/TwoCorpora#Access_to_the_corpora"><span class="fa fa-search"></span>Concordancer</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://cmc-corpora.ch/">What's up, Switzerland?</a>
+				</p>
+				<p>
+					<strong>Size: </strong>5 million tokens
+				</p>
+			</td>
+			<td valign="top">
+				Swiss German, German, French, Italian, Romansh
+			</td>
+			<td valign="top">
+				<p>This corpus contains 216 WhatsApp chats from 2014.</p>
+<p>The corpus is accessible online through the ANNIS system.</p>
+
+				<p>For the relevant publication, see <a href="https://www.clarin.eu/resource-families/cmc-corpora#Ueberwasser%20and%20Stark%202017">Ueberwasser and Stark (2017).</a></p>
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://linguistik-sms.uzh.ch:8080/annis-gui/"><span class="fa fa-search"></span>Browse</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<p>
+					<a href="http://techiaith.cymru/corpora/twitter/?lang=en">The Corpus of Welsh Language Tweets</a>
+				</p>
+				<p>
+					<strong>Size: </strong>7 million tokens
+					<br>
+					<strong>Annotation: </strong>tokenised
+					<br>
+					<strong>Licence: </strong>unclear
+				</p>
+			</td>
+			<td valign="top">
+				Welsh
+			</td>
+			<td valign="top">
+				<p>The corpus contains tweets.</p>
+<p>The corpus is available for download from a dedicated webpage.</p>
+
+				
+			</td>
+			<td valign="top">
+				<p><a class="btn btn-primary text-nowrap" href="http://techiaith.cymru/data/corpora/twitter/?lang=en"><span class="fa fa-arrow-circle-o-down"></span>Download</a></p>
+
+				
+			</td>
+		</tr>
+	</tbody>
+</table>
