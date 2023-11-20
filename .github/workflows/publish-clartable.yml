@@ -23,13 +23,7 @@ jobs:
       - name: Generate tables
         run: |
           mkdir tables || true
-          cd rfhg
-          ./generate-tables.sh
-          cd ..
-          echo "Tables generated"
-          ls
-          cd ./tables
-          ls
+          ./rfhg/generate-tables.sh
       - name: Deploy tables to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4 # https://github.com/JamesIves/github-pages-deploy-action
         with:
