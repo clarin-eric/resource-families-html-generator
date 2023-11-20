@@ -23,7 +23,9 @@ jobs:
       - name: Generate tables
         run: |
           mkdir tables || true
-          ./rfhg/generate-tables.sh
+          cd rfhg
+          ./generate-tables.sh
+          cd ..
           echo "Tables generated"
           ls
       - name: Deploy tables to gh-pages
